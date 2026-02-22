@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="sr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YOLO Projekat | Autonomno AI Vozilo</title>
+    <meta
+      name="description"
+      content="Edukativna platforma za razvoj Edge AI rešenja na Raspberry Pi 5 platformi."
+    />
+    <meta
+      name="keywords"
+      content="YOLOv11, Raspberry Pi 5, Edge AI, Robotika, Autonomna vozila"
+    />
+
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme");
+        const pref = window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+        document.documentElement.setAttribute("data-theme", saved || pref);
+      })();
+    </script>
+  </head>
+  <body>
+    <div
+      id="menu-overlay"
+      class="menu-overlay"
+      aria-label="Zatvori meni"
+      hidden
+    ></div>
+
+    <header id="navbar" class="navbar">
+      <div class="nav-container">
+        <button class="logo" id="logo-btn" aria-label="Povratak na vrh">
+          <div class="logo-icon">
+            <div class="logo-ring"></div>
+            <div class="logo-dot"></div>
+          </div>
+          <div class="logo-text">
+            <span class="logo-main">YOLO</span>
+            <span class="logo-sub">PROJEKAT</span>
+          </div>
+        </button>
+
+        <nav class="nav-links" id="main-nav">
+          <ul class="nav-list">
+            <li>
+              <button class="nav-item" data-target="hardware">HARDVER</button>
+            </li>
+            <li>
+              <button class="nav-item" data-target="software-logic">
+                SOFTVER
+              </button>
+            </li>
+            <li>
+              <button class="nav-item" data-target="projects">EKOSISTEM</button>
+            </li>
+            <li>
+              <button class="nav-item" data-target="use-cases">PRIMENA</button>
+            </li>
+          </ul>
+
+          <div class="nav-actions">
+            <button
+              id="theme-toggle"
+              class="theme-toggle"
+              aria-label="Promeni temu"
+            >
+              <svg
+                id="theme-icon"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></svg>
+            </button>
+            <a
+              href="https://github.com/yolo-projekat"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="github-cta"
+              >GITHUB</a
+            >
+          </div>
+        </nav>
+
+        <button
+          id="mobile-toggle"
+          class="mobile-toggle"
+          aria-label="Meni"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          <div id="hamburger" class="hamburger">
+            <span class="line-top"></span>
+            <span class="line-mid"></span>
+            <span class="line-bot"></span>
+          </div>
+        </button>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section id="hero" class="hero section-container animate-fade-up">
+        <div class="hero-content">
+          <div class="logo-container" aria-hidden="true">
+            <span class="logo-main">YOLO</span>
+            <span class="logo-sub">PROJEKAT</span>
+          </div>
+          <h1 class="gradient-text">AUTONOMNO YOLO VOZILO</h1>
+          <p class="hero-desc delay-1">
+            Otvorena platforma za istraživanje
+            <strong>Edge AI tehnologija</strong> na Raspberry Pi 5 arhitekturi.
+          </p>
+          <div class="badges delay-2">
+            <span class="high-contrast-badge">🎓 Edukativni Projekt</span>
+            <span class="high-badge-outline">🧠 YOLOv11 & OCR</span>
+            <span class="high-badge-outline">🚀 N1 Autonomija</span>
+            <span class="high-badge-outline">🏎️ Mecanum Drive</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="hardware" class="section-container">
+        <header class="section-header animate-fade-up">
+          <h2 class="section-title">Hardverska Arhitektura</h2>
+          <p class="section-subtitle">
+            Transparentan uvid u komponente namenjen inženjerima
+          </p>
+        </header>
+        <div class="presentation-grid">
+          <div class="image-container animate-fade-right">
+            <figure class="img-wrapper">
+              <img
+                src="assets/hardverska-sema.webp"
+                alt="Šema povezivanja Raspberry Pi 5, motora i senzora"
+                class="hardware-img"
+                loading="lazy"
+              />
+              <figcaption class="caption">
+                Slika 1: Šema povezivanja RPi 5 i senzorskih modula
+              </figcaption>
+            </figure>
+          </div>
+          <div class="specs-card animate-fade-left">
+            <article class="spec-item">
+              <strong class="text-primary-high">Napajanje</strong>
+              <p>
+                XL4015 Step-down konverter (5.1V, 5A) za stabilan rad Raspberry
+                Pi 5.
+              </p>
+            </article>
+            <article class="spec-item">
+              <strong class="text-primary-high">Kretanje</strong>
+              <p>
+                Četiri DC motora sa Mecanum točkovima za kretanje u svim
+                pravcima.
+              </p>
+            </article>
+            <article class="spec-item">
+              <strong class="text-primary-high">Vid</strong>
+              <p>
+                RPi Camera Module V2 (8MP) povezana putem MIPI CSI-2 interfejsa.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="software-logic" class="section-container">
+        <header class="section-header animate-fade-up">
+          <h2 class="section-title">Softverska Inteligencija</h2>
+          <p class="section-subtitle">
+            Optimizacija neuronske mreže za rad u realnom vremenu
+          </p>
+        </header>
+        <div class="modern-grid stagger-grid">
+          <article class="modern-card interactive animate-fade-up delay-1">
+            <div class="card-content">
+              <div class="card-top">
+                <span class="modern-icon" aria-hidden="true">🧠</span>
+                <span class="tech-pill-high">AI Model</span>
+              </div>
+              <h3>YOLOv11 ONNX</h3>
+              <p>
+                Visok FPS na CPU korišćenjem ONNX optimizacija bez potrebe za
+                eksternim akceleratorom.
+              </p>
+            </div>
+          </article>
+          <article class="modern-card interactive animate-fade-up delay-2">
+            <div class="card-content">
+              <div class="card-top">
+                <span class="modern-icon" aria-hidden="true">👁️</span>
+                <span class="tech-pill-high">OCR Engine</span>
+              </div>
+              <h3>Tesseract OCR</h3>
+              <p>
+                Detekcija i ekstrakcija teksta sa tablica i saobraćajnih znakova
+                u milisekundama.
+              </p>
+            </div>
+          </article>
+          <article class="modern-card interactive animate-fade-up delay-3">
+            <div class="card-content">
+              <div class="card-top">
+                <span class="modern-icon" aria-hidden="true">⚡</span>
+                <span class="tech-pill-high">Parallelism</span>
+              </div>
+              <h3>Multithreading</h3>
+              <p>
+                Paralelna obrada akvizicije slike, AI inferencije i PWM kontrole
+                motora.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="section-container animate-fade-up">
+        <header class="section-header">
+          <h2 class="section-title">Modularni Ekosistem</h2>
+          <p class="section-subtitle">
+            Kompletan izvorni kod dostupan na GitHub-u
+          </p>
+        </header>
+        <div class="modern-grid">
+          <a
+            href="https://github.com/yolo-projekat/Yolo-Projekat-Windows"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="modern-card-link"
+          >
+            <article class="modern-card interactive">
+              <div class="card-content">
+                <div class="card-top">
+                  <span class="modern-icon" aria-hidden="true">🖥️</span>
+                  <span class="tech-pill-high">WinUI 3 • C#</span>
+                </div>
+                <h3>Windows Klijent</h3>
+                <p>
+                  Napredna kontrolna stanica sa ONNX Runtime-om za inženjerski
+                  nadzor na Windows 11 platformi.
+                </p>
+                <div class="card-footer-high"><span>Pogledaj kod →</span></div>
+              </div>
+            </article>
+          </a>
+          <a
+            href="https://github.com/yolo-projekat/Yolo-Projekat-Linux"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="modern-card-link"
+          >
+            <article class="modern-card interactive">
+              <div class="card-content">
+                <div class="card-top">
+                  <span class="modern-icon" aria-hidden="true">🐧</span>
+                  <span class="tech-pill-high">GTK4 • Python</span>
+                </div>
+                <h3>Linux Klijent</h3>
+                <p>
+                  Native GNOME aplikacija optimizovana za nisku latenciju i
+                  stabilnost na Linux distribucijama.
+                </p>
+                <div class="card-footer-high"><span>Pogledaj kod →</span></div>
+              </div>
+            </article>
+          </a>
+          <a
+            href="https://github.com/yolo-projekat/Yolo-Projekat-Android"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="modern-card-link"
+          >
+            <article class="modern-card interactive">
+              <div class="card-content">
+                <div class="card-top">
+                  <span class="modern-icon" aria-hidden="true">📱</span>
+                  <span class="tech-pill-high">Kotlin • Compose</span>
+                </div>
+                <h3>Android App</h3>
+                <p>
+                  Mobilna kontrola sa WebSocket komunikacijom za upravljanje
+                  robotskim vozilom u realnom vremenu.
+                </p>
+                <div class="card-footer-high"><span>Pogledaj kod →</span></div>
+              </div>
+            </article>
+          </a>
+          <a
+            href="https://github.com/yolo-projekat/Yolo-Projekat-Python"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="modern-card-link"
+          >
+            <article class="modern-card interactive">
+              <div class="card-content">
+                <div class="card-top">
+                  <span class="modern-icon" aria-hidden="true">🐍</span>
+                  <span class="tech-pill-high">YOLOv11 • OpenCV</span>
+                </div>
+                <h3>Python Engine</h3>
+                <p>
+                  Srce AI sistema koje vrši procesiranje video strima i
+                  klasifikaciju objekata na samom vozilu.
+                </p>
+                <div class="card-footer-high"><span>Pogledaj kod →</span></div>
+              </div>
+            </article>
+          </a>
+          <a
+            href="https://github.com/yolo-projekat/Yolo-Projekat-Raspberry-Pi"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="modern-card-link"
+          >
+            <article class="modern-card interactive">
+              <div class="card-content">
+                <div class="card-top">
+                  <span class="modern-icon" aria-hidden="true">⚙️</span>
+                  <span class="tech-pill-high">Linux • Systemd</span>
+                </div>
+                <h3>RPi Core</h3>
+                <p>
+                  Sistemski servisi i drajveri na Raspberry Pi 5 platformi
+                  zaduženi za hardversku orkestraciju.
+                </p>
+                <div class="card-footer-high"><span>Pogledaj kod →</span></div>
+              </div>
+            </article>
+          </a>
+          <a
+            href="https://github.com/yolo-projekat/Yolo-Projekat-Veb-Kontrola"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="modern-card-link"
+          >
+            <article class="modern-card interactive">
+              <div class="card-content">
+                <div class="card-top">
+                  <span class="modern-icon" aria-hidden="true">🌐</span>
+                  <span class="tech-pill-high">Next.js • WS</span>
+                </div>
+                <h3>Veb Dashboard</h3>
+                <p>
+                  Cloud-ready panel za daljinski monitoring telemetrije i
+                  vizuelni uvid u stanje senzora vozila.
+                </p>
+                <div class="card-footer-high"><span>Pogledaj kod →</span></div>
+              </div>
+            </article>
+          </a>
+        </div>
+      </section>
+
+      <section id="use-cases" class="section-container">
+        <header class="section-header animate-fade-up">
+          <h2 class="section-title">Primena Projekta</h2>
+          <p class="section-subtitle">
+            Od edukativne platforme do industrijskih prototipova
+          </p>
+        </header>
+        <div class="modern-grid stagger-grid">
+          <article
+            class="modern-card interactive featured-card animate-fade-up delay-1"
+          >
+            <div class="card-content">
+              <div class="card-top">
+                <span class="modern-icon" aria-hidden="true">🎓</span>
+                <span class="tech-pill-high primary-pill">Glavna Svrha</span>
+              </div>
+              <h3>Edukacija i R&D</h3>
+              <p>
+                Idealna baza za učenje Edge AI-a, Linux sistema i Python
+                programiranja na hardveru.
+              </p>
+            </div>
+          </article>
+          <article class="modern-card interactive animate-fade-up delay-2">
+            <div class="card-content">
+              <div class="card-top">
+                <span class="modern-icon" aria-hidden="true">🏙️</span>
+                <span class="tech-pill-high">Smart City</span>
+              </div>
+              <h3>Monitoring Saobraćaja</h3>
+              <p>
+                Primena YOLO detekcije za brojanje vozila i analizu frekvencije
+                saobraćaja u realnom vremenu.
+              </p>
+            </div>
+          </article>
+          <article class="modern-card interactive animate-fade-up delay-3">
+            <div class="card-content">
+              <div class="card-top">
+                <span class="modern-icon" aria-hidden="true">🏭</span>
+                <span class="tech-pill-high">Industry 4.0</span>
+              </div>
+              <h3>AGV Logistika</h3>
+              <p>
+                Prototip za autonomne transportere u magacinima koji prate
+                vizuelne oznake.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Autor: <strong>Danilo Stoletović</strong> • Mentor:
+        <strong>Dejan Batanjac</strong>
+      </p>
+      <p>ETŠ „Nikola Tesla“ Niš • 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
