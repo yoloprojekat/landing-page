@@ -475,7 +475,7 @@ footer {
   font-size: 1rem;
 }
 
-/* === Scroll Animations (Replaces Svelte in:fly/fade) === */
+/* === Scroll Animations === */
 .animate-fade-up {
   opacity: 0;
   transform: translateY(30px);
@@ -557,5 +557,397 @@ footer {
   }
   .section-container {
     margin: 80px auto;
+  }
+}
+/* --- Galerija --- */
+.gallery-card {
+  background: var(--card-bg-glass);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gallery-card:hover {
+  transform: translateY(-10px);
+}
+
+.gallery-img-container {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.gallery-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-info {
+  padding: 20px;
+}
+
+/* --- Video --- */
+.video-wrapper {
+  background: var(--card-bg-glass);
+  padding: 12px;
+  border-radius: 32px;
+  border: 1px solid var(--border);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.main-video {
+  width: 100%;
+  border-radius: 22px;
+  display: block;
+}
+
+.video-overlay-text {
+  padding: 24px;
+  text-align: center;
+}
+
+/* --- Roadmap Timeline --- */
+.roadmap-timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px 0;
+}
+
+.roadmap-timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--primary),
+    transparent
+  );
+  transform: translateX(-50%);
+}
+
+.roadmap-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  margin-bottom: 20px;
+}
+
+.roadmap-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+.roadmap-item:nth-child(even) {
+  left: 50%;
+  text-align: left;
+}
+
+.roadmap-dot {
+  position: absolute;
+  top: 45px;
+  width: 16px;
+  height: 16px;
+  background: var(--bg);
+  border: 3px solid var(--primary);
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.roadmap-item:nth-child(odd) .roadmap-dot {
+  right: -8px;
+}
+.roadmap-item:nth-child(even) .roadmap-dot {
+  left: -8px;
+}
+
+.roadmap-card {
+  background: var(--card-bg-glass);
+  padding: 24px;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.roadmap-item.active .roadmap-card {
+  border-color: var(--primary);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+}
+
+.phase-tag {
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.roadmap-card ul {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.roadmap-card li {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+/* Responsive Roadmap */
+@media (max-width: 768px) {
+  .roadmap-timeline::before {
+    left: 20px;
+  }
+  .roadmap-item {
+    width: 100%;
+    left: 0 !important;
+    text-align: left !important;
+    padding-left: 50px;
+  }
+  .roadmap-dot {
+    left: 12px !important;
+  }
+}
+/* --- Footer & QR Style --- */
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+}
+
+.qr-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--card-bg-glass);
+  padding: 15px;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.qr-wrapper:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
+
+.qr-container {
+  width: 100px;
+  height: 100px;
+  background: #fff; /* QR kodovi najbolje rade na beloj pozadini */
+  padding: 8px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.qr-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.qr-label {
+  font-weight: 800;
+  color: var(--text-main);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.qr-sub {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  max-width: 120px;
+}
+
+/* Mobile responsive footer */
+@media (max-width: 768px) {
+  .footer-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+  .qr-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+/* --- Footer Integracija --- */
+.footer {
+  margin-top: 80px;
+  padding-bottom: 40px !important;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* Poravnanje po dnu */
+  gap: 40px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-credits p {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.special-thanks {
+  font-size: 0.85rem !important;
+  color: var(--text-dim) !important;
+  margin-top: 10px;
+  border-left: 2px solid var(--primary);
+  padding-left: 10px;
+}
+
+.school-info {
+  margin-top: 15px;
+  font-weight: 600;
+  color: var(--primary) !important;
+}
+
+CSS
+/* --- Povećan QR Code Box --- */
+.qr-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 25px; /* Povećan razmak između koda i teksta */
+  background: var(--card-bg-glass);
+  padding: 20px 25px; /* Povećan unutrašnji razmak */
+  border-radius: 28px; /* Malo veći radijus za bolji izgled */
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.qr-wrapper:hover {
+  border-color: var(--primary);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.qr-container {
+  width: 140px; /* Povećano sa 80px/100px na 140px */
+  height: 140px; /* Povećano sa 80px/100px na 140px */
+  background: #fff;
+  padding: 10px; /* Malo više "vazduha" za kameru telefona */
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Sprečava skupljanje koda na manjim ekranima */
+}
+
+.qr-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.qr-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.qr-label {
+  font-weight: 800;
+  color: var(--text-main);
+  font-size: 1.1rem; /* Povećan font naslova */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.qr-sub {
+  font-size: 0.85rem; /* Povećan font opisa */
+  color: var(--text-dim);
+  max-width: 160px; /* Povećana širina teksta da prati veći box */
+  line-height: 1.4;
+}
+
+/* Prilagođavanje za mobilne telefone */
+@media (max-width: 768px) {
+  .qr-container {
+    width: 180px; /* Još veći fokus na mobilnom da bude lakše za klik/sken */
+    height: 180px;
+  }
+
+  .qr-wrapper {
+    padding: 30px;
+    width: 100%;
+    max-width: 300px; /* Centriran i širok box na mobilnom */
+  }
+}
+/* --- Responzivni Footer (Mobilni uređaji) --- */
+@media (max-width: 768px) {
+  .footer-grid {
+    flex-direction: column; /* Slaže elemente jedan ispod drugog */
+    text-align: center; /* Centrira sav tekst (naslove, imena) */
+    align-items: center; /* Centrira flex elemente (logo, qr wrapper) */
+    gap: 50px; /* Veći razmak između teksta i QR koda */
+  }
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrira logo unutar leve sekcije */
+    width: 100%;
+  }
+
+  .footer-credits {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .special-thanks {
+    border-left: none; /* Uklanjamo bočnu liniju na mobilnom */
+    border-top: 2px solid var(--primary); /* Dodajemo liniju iznad za bolji efekat */
+    padding-left: 0;
+    padding-top: 15px;
+    margin-top: 15px;
+    display: inline-block;
+    max-width: 280px; /* Da tekst zahvalnice ne bi bio preširok */
+  }
+
+  .qr-wrapper {
+    flex-direction: column; /* QR kod ide iznad teksta "Digitalna verzija" */
+    text-align: center;
+    align-items: center;
+    padding: 30px;
+    width: 100%;
+    max-width: 320px; /* Ograničavamo širinu box-a radi estetike */
+  }
+
+  .qr-container {
+    width: 180px; /* Veći QR kod na mobilnom za lakše skeniranje */
+    height: 180px;
+    margin-bottom: 15px; /* Razmak između koda i teksta ispod njega */
+  }
+
+  .qr-text {
+    align-items: center; /* Centrira "Digitalna verzija" i opis */
+  }
+
+  .qr-sub {
+    max-width: none; /* Dozvoljava tekstu da se širi prirodno */
   }
 }

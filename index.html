@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>YOLO Projekat | Autonomno AI Vozilo</title>
+    <title>Pametno Vozilo | Autonomno AI Vozilo</title>
     <meta
       name="description"
       content="Edukativna platforma za razvoj Edge AI rešenja na Raspberry Pi 5 platformi."
     />
     <meta
       name="keywords"
-      content="YOLOv11, Raspberry Pi 5, Edge AI, Robotika, Autonomna vozila"
+      content="Pametno Vozilo, YOLOv26, Raspberry Pi 5, Edge AI, Robotika, Autonomna vozila"
     />
 
     <link rel="icon" type="image/png" href="assets/favicon.png" />
@@ -32,6 +32,7 @@
       })();
     </script>
   </head>
+
   <body>
     <div
       id="menu-overlay"
@@ -48,8 +49,8 @@
             <div class="logo-dot"></div>
           </div>
           <div class="logo-text">
-            <span class="logo-main">YOLO</span>
-            <span class="logo-sub">PROJEKAT</span>
+            <span class="logo-main">PAMETNO</span>
+            <span class="logo-sub">VOZILO</span>
           </div>
         </button>
 
@@ -119,10 +120,10 @@
       <section id="hero" class="hero section-container animate-fade-up">
         <div class="hero-content">
           <div class="logo-container" aria-hidden="true">
-            <span class="logo-main">YOLO</span>
-            <span class="logo-sub">PROJEKAT</span>
+            <span class="logo-main">PAMETNO</span>
+            <span class="logo-sub">VOZILO</span>
           </div>
-          <h1 class="gradient-text">AUTONOMNO YOLO VOZILO</h1>
+          <h1 class="gradient-text">AUTONOMNO AI VOZILO</h1>
           <p class="hero-desc delay-1">
             Otvorena platforma za istraživanje
             <strong>Edge AI tehnologija</strong> na Raspberry Pi 5 arhitekturi.
@@ -241,7 +242,7 @@
         </header>
         <div class="modern-grid">
           <a
-            href="https://github.com/yoloprojekat/windows-client-legacy"
+            href="https://github.com/yoloprojekat/rpi-server"
             target="_blank"
             rel="noopener noreferrer"
             class="modern-card-link"
@@ -249,20 +250,21 @@
             <article class="modern-card interactive">
               <div class="card-content">
                 <div class="card-top">
-                  <span class="modern-icon" aria-hidden="true">🖥️</span>
-                  <span class="tech-pill-high">WinUI 3 • C#</span>
+                  <span class="modern-icon" aria-hidden="true">⚙️</span>
+                  <span class="tech-pill-high">Docker • Python</span>
                 </div>
-                <h3>Windows Klijent</h3>
+                <h3>RPi Server</h3>
                 <p>
-                  Napredna kontrolna stanica sa ONNX Runtime-om za inženjerski
-                  nadzor na Windows 11 platformi.
+                  Glavni backend. Upravlja hardverom, YOLOv26 detekcijom i HTTP
+                  MJPEG strimovanjem u kontejneru.
                 </p>
                 <div class="card-footer-high"><span>Pogledaj kod →</span></div>
               </div>
             </article>
           </a>
+
           <a
-            href="https://github.com/yoloprojekat/linux-client"
+            href="https://github.com/yoloprojekat/smart-network"
             target="_blank"
             rel="noopener noreferrer"
             class="modern-card-link"
@@ -270,18 +272,41 @@
             <article class="modern-card interactive">
               <div class="card-content">
                 <div class="card-top">
-                  <span class="modern-icon" aria-hidden="true">🐧</span>
-                  <span class="tech-pill-high">GTK4 • Python</span>
+                  <span class="modern-icon" aria-hidden="true">📡</span>
+                  <span class="tech-pill-high">Bash • Network</span>
                 </div>
-                <h3>Linux Klijent</h3>
+                <h3>Smart Network</h3>
                 <p>
-                  Native GNOME aplikacija optimizovana za nisku latenciju i
-                  stabilnost na Linux distribucijama.
+                  Osigurava 100% dostupnost. Automatski konfiguriše hotspot na
+                  vozilu u nedostatku eksterne mreže.
                 </p>
                 <div class="card-footer-high"><span>Pogledaj kod →</span></div>
               </div>
             </article>
           </a>
+
+          <a
+            href="https://github.com/yoloprojekat/model-pipeline"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="modern-card-link"
+          >
+            <article class="modern-card interactive">
+              <div class="card-content">
+                <div class="card-top">
+                  <span class="modern-icon" aria-hidden="true">🔄</span>
+                  <span class="tech-pill-high">ONNX • TFLite</span>
+                </div>
+                <h3>Model Pipeline</h3>
+                <p>
+                  Optimizovan proces konverzije YOLO modela za hardverski
+                  akcelerisanu inferencu.
+                </p>
+                <div class="card-footer-high"><span>Pogledaj kod →</span></div>
+              </div>
+            </article>
+          </a>
+
           <a
             href="https://github.com/yoloprojekat/android-client"
             target="_blank"
@@ -296,55 +321,14 @@
                 </div>
                 <h3>Android App</h3>
                 <p>
-                  Mobilna kontrola. Koristi WebRTC za prenos videa niske
-                  latencije i UDP protokole za upravljanje kretanjem.
+                  Mobilna kontrola. Prikaz videa niske latencije i upravljanje
+                  kretanjem u realnom vremenu.
                 </p>
                 <div class="card-footer-high"><span>Pogledaj kod →</span></div>
               </div>
             </article>
           </a>
-          <a
-            href="https://github.com/yoloprojekat/python-desktop"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="modern-card-link"
-          >
-            <article class="modern-card interactive">
-              <div class="card-content">
-                <div class="card-top">
-                  <span class="modern-icon" aria-hidden="true">🐍</span>
-                  <span class="tech-pill-high">YOLOv11 • OpenCV</span>
-                </div>
-                <h3>Python Engine</h3>
-                <p>
-                  Srce AI sistema koje vrši procesiranje video strima i
-                  klasifikaciju objekata na samom vozilu.
-                </p>
-                <div class="card-footer-high"><span>Pogledaj kod →</span></div>
-              </div>
-            </article>
-          </a>
-          <a
-            href="https://github.com/yoloprojekat/rpi-server"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="modern-card-link"
-          >
-            <article class="modern-card interactive">
-              <div class="card-content">
-                <div class="card-top">
-                  <span class="modern-icon" aria-hidden="true">⚙️</span>
-                  <span class="tech-pill-high">Linux • Systemd</span>
-                </div>
-                <h3>RPi Core</h3>
-                <p>
-                  Sistemski servisi i drajveri na Raspberry Pi 5 platformi
-                  zaduženi za hardversku orkestraciju.
-                </p>
-                <div class="card-footer-high"><span>Pogledaj kod →</span></div>
-              </div>
-            </article>
-          </a>
+
           <a
             href="https://github.com/yoloprojekat/web-dashboard"
             target="_blank"
@@ -355,12 +339,34 @@
               <div class="card-content">
                 <div class="card-top">
                   <span class="modern-icon" aria-hidden="true">🌐</span>
-                  <span class="tech-pill-high">Next.js • WebRTC/UDP</span>
+                  <span class="tech-pill-high">Next.js • React</span>
                 </div>
                 <h3>Veb Dashboard</h3>
                 <p>
-                  Cloud-ready panel za monitoring. Integrisan WebRTC za vizuelni
-                  uvid i UDP za instant komande vozilu.
+                  Cloud-ready panel za remote monitoring vozila direktno iz veb
+                  pregledača.
+                </p>
+                <div class="card-footer-high"><span>Pogledaj kod →</span></div>
+              </div>
+            </article>
+          </a>
+
+          <a
+            href="https://github.com/yoloprojekat/rpi-server-legacy"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="modern-card-link"
+          >
+            <article class="modern-card interactive">
+              <div class="card-content">
+                <div class="card-top">
+                  <span class="modern-icon" aria-hidden="true">💾</span>
+                  <span class="tech-pill-high">Archive • Systemd</span>
+                </div>
+                <h3>RPi Server (Legacy)</h3>
+                <p>
+                  Arhivirana verzija backenda zasnovana na nativnim Linux
+                  servisima i WebSockets protokolu.
                 </p>
                 <div class="card-footer-high"><span>Pogledaj kod →</span></div>
               </div>
@@ -420,14 +426,207 @@
           </article>
         </div>
       </section>
-    </main>
+      <section id="galerija" class="section-container">
+        <header class="section-header">
+          <h2 class="section-title">Galerija</h2>
+        </header>
+        <div class="modern-grid">
+          <div class="gallery-card">
+            <div class="gallery-img-container">
+              <img
+                src="putanja/do/slike1.jpg"
+                alt="Pametno Vozilo - Eksterijer"
+              />
+            </div>
+            <div class="gallery-info">
+              <p>Fizički izgled vozila i senzorska mreža</p>
+            </div>
+          </div>
 
-    <footer>
-      <p>
-        Autor: <strong>Danilo Stoletović</strong> • Mentor:
-        <strong>Dejan Batanjac</strong>
-      </p>
-      <p>ETŠ „Nikola Tesla“ Niš • 2026</p>
+          <div class="gallery-card">
+            <div class="gallery-img-container">
+              <img
+                src="putanja/do/slike2.jpg"
+                alt="Android Aplikacija Interface"
+              />
+            </div>
+            <div class="gallery-info">
+              <p>Korisnički interfejs Kotlin aplikacije</p>
+            </div>
+          </div>
+
+          <div class="gallery-card">
+            <div class="gallery-img-container">
+              <img src="putanja/do/slike3.jpg" alt="YOLOv8 Detekcija" />
+            </div>
+            <div class="gallery-info">
+              <p>Prikaz detekcije objekata u realnom vremenu</p>
+            </div>
+          </div>
+
+          <div class="gallery-card">
+            <div class="gallery-img-container">
+              <img src="putanja/do/slike4.jpg" alt="Docker Dashboard" />
+            </div>
+            <div class="gallery-info">
+              <p>Upravljanje kontejnerima na Raspberry Pi 5</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="video-demo" class="section-container">
+        <header class="section-header">
+          <h2 class="section-title">Video Prezentacija</h2>
+        </header>
+        <div class="video-wrapper">
+          <video controls poster="putanja/do/thumbnail.jpg" class="main-video">
+            <source src="video/demo_projekta.mp4" type="video/mp4" />
+            Vaš pretraživač ne podržava video tag.
+          </video>
+          <div class="video-overlay-text">
+            <p class="video-description">
+              Prikaz autonomnog kretanja, prepoznavanja znakova i upravljanja
+              putem mreže.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="roadmap" class="section-container">
+        <header class="section-header">
+          <h2 class="section-title">
+            Evolucija Projekta: Od Igračke do Platforme
+          </h2>
+          <p class="section-subtitle">
+            Hronološki prikaz razvoja i vizija budućnosti
+          </p>
+        </header>
+
+        <div class="roadmap-timeline">
+          <div class="roadmap-item completed">
+            <div class="roadmap-dot"></div>
+            <div class="roadmap-card">
+              <div class="phase-tag">V1 - Koncept Igračke</div>
+              <h3>Faza I: Prototip i Osnovna Kontrola</h3>
+              <p>Fokus na osnovnoj funkcionalnosti i zabavi:</p>
+              <ul>
+                <li>
+                  <strong>Hardver:</strong>Sastavljanje šasije i kretanje putem
+                  fixnog hotspot-a
+                </li>
+                <li>
+                  <strong>Pokusaj upravljanja:</strong> Jednostavno daljinsko
+                  upravljanje
+                </li>
+                <li>
+                  <strong>Pokusaj integracije:</strong> Osnovna integracija
+                  kamere za FPV
+                </li>
+                <li>
+                  <strong>Prva aplikacija:</strong>Osnovna alpha android
+                  aplikacija i python script-a
+                </li>
+                <li><strong>Dodavanje AI:</strong> Implementacije YOLOV8</li>
+                <li><strong>Fokus ,,Da radi":</strong>Sinhrona arhitectura</li>
+                <li>
+                  <strong>Black box model:</strong> Source kod nije dostupan
+                </li>
+                <li><strong>Tip projekta:</strong>Prof of Concept</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="roadmap-item active">
+            <div class="roadmap-dot"></div>
+            <div class="roadmap-card">
+              <div class="phase-tag">V2 - Edukativna Platforma</div>
+              <h3>Faza II: Pametno Vozilo i AI Integracija</h3>
+              <p>Transformacija u sistem za učenje i istraživanje:</p>
+              <ul>
+                <li>
+                  <strong>Rewrite from scratch</strong> Self-healing sistem
+                </li>
+                <li><strong>AI Vizija:</strong> Implementacija YOLOv26</li>
+                <li><strong>Modularna Arhitektura:</strong> Docker i RPi 5</li>
+                <li><strong>Smart Network:</strong> Self-healing sistem</li>
+
+                <li>
+                  <strong>Dockerizovan server</strong> Self-healing sistem, easy
+                  deployement
+                </li>
+
+                <li>
+                  <strong>Edukativni UI koji je stabilan</strong> Kotlin/Android
+                  aplikacija
+                </li>
+                <li>
+                  <strong>Dostupnost:</strong>Javno dostupna dokumentacija i
+                  laka nadogradnja
+                </li>
+
+                <li>
+                  <strong>FLOSS:</strong> Ceo kod projekta dostupan na GitHub-u
+                  pod MIT licencom
+                </li>
+                <li>
+                  <strong>Tip projekta:</strong> Edukativna platforma i gotov
+                  proizvod
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="roadmap-item future">
+            <div class="roadmap-dot"></div>
+            <div class="roadmap-card">
+              <div class="phase-tag">V3 - Implementacija Platforme</div>
+              <h3>Faza III: Skaliranje i Primena</h3>
+              <p>Širenje projekta kao otvorenog alata za obrazovanje:</p>
+              <ul>
+                <li>
+                  <strong>Interaktivno učenje:</strong> Blockly ili Python API
+                </li>
+                <li>
+                  <strong>Napredni Senzori:</strong> LiDAR i SLAM algoritmi
+                </li>
+                <li>
+                  <strong>Proizvodnja:</strong> Optimizacija za škole i
+                  Implementacija
+                </li>
+                <li><strong>Tip projekta:</strong>Implementiran proizvod</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer section-container">
+      <div class="footer-grid">
+        <div class="footer-left animate-fade-up">
+          <div class="logo-text" style="margin-bottom: 15px">
+            <span class="logo-main">PAMETNO</span>
+            <span class="logo-sub">VOZILO</span>
+          </div>
+          <div class="footer-credits">
+            <p>Autor: <strong>Danilo Stoletović</strong></p>
+            <p>Mentor: <strong>Predrag Šubarević</strong></p>
+            <p class="special-thanks">
+              Zahvalnost bivšem mentoru: <strong>Dejanu Batanjcu</strong>
+            </p>
+            <p class="school-info">ETŠ „Nikola Tesla“ Niš • 2026</p>
+          </div>
+        </div>
+
+        <div class="footer-right animate-fade-up delay-1">
+          <div class="qr-wrapper">
+            <div class="qr-container">
+              <img src="assets/qr-sajt.avif" alt="QR Code" class="qr-img" />
+            </div>
+            <div class="qr-text">
+              <span class="qr-label">Digitalna verzija</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>
