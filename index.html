@@ -57,6 +57,9 @@
         <nav class="nav-links" id="main-nav">
           <ul class="nav-list">
             <li>
+              <button class="nav-item" data-target="intro">UVOD</button>
+            </li>
+            <li>
               <button class="nav-item" data-target="hardware">HARDVER</button>
             </li>
             <li>
@@ -140,6 +143,85 @@
         </div>
       </section>
 
+      <section id="intro" class="section-container">
+        <header class="section-header animate-fade-up">
+          <h2 class="section-title">Zašto smo započeli ovaj projekat?</h2>
+          <p class="section-subtitle">Od problema do gotovog rešenja</p>
+        </header>
+        <div class="modern-grid stagger-grid">
+          <article class="modern-card interactive animate-fade-up delay-1">
+            <div class="card-content">
+              <div class="card-top">
+                <span class="modern-icon" aria-hidden="true">⚠️</span>
+                <span
+                  class="tech-pill-high"
+                  style="border-color: #ff4d4d; color: #ff4d4d"
+                  >Digitalni Krah</span
+                >
+              </div>
+              <h3>Apokalipsa Učenja</h3>
+              <p>
+                Živimo u eri informacija, a nikada nismo bili manje edukovani.
+                Tradicionalno učenje o tehnologiji je tromo. Učenici se guše u
+                suvoj teoriji, dok prava, primenljiva inženjerska znanja ostaju
+                nedostižna. Da li ste ikada osetili strah da tehnologija juri
+                napred, a mi stojimo u mestu zaglavljeni u zastarelim metodama?
+                To je tiha katastrofa.
+              </p>
+            </div>
+          </article>
+
+          <article
+            class="modern-card interactive featured-card animate-fade-up delay-2"
+          >
+            <div class="card-content">
+              <div class="card-top">
+                <span class="modern-icon" aria-hidden="true">💡</span>
+                <span class="tech-pill-high primary-pill">Nova Era</span>
+              </div>
+              <h3>Rešenje: Pametno Vozilo</h3>
+              <p>
+                Na scenu stupa <strong>Pametno Vozilo</strong>. Ovo nije samo
+                robot; to je personalizovana edukativna platforma – opipljiv
+                most između haosa u teoriji i genijalnosti u praksi. Sistem
+                eliminiše "šum" i omogućava direktan rad sa najmodernijim Edge
+                AI tehnologijama, pretvarajući učenje iz mučenja u zaraznu igru
+                uspeha.
+              </p>
+            </div>
+          </article>
+
+          <article class="modern-card interactive animate-fade-up delay-3">
+            <div class="card-content">
+              <div class="card-top">
+                <span class="modern-icon" aria-hidden="true">🔧</span>
+                <span class="tech-pill-high">Iza Kulisa</span>
+              </div>
+              <h3>Anatomija i Izazovi</h3>
+              <p>
+                Platforma se sastoji od modularne šasije, moćnog AI senzorskog
+                jezgra i nezavisnog mrežnog sistema.
+              </p>
+              <div
+                style="
+                  margin-top: 15px;
+                  padding-left: 15px;
+                  border-left: 3px solid var(--primary-color);
+                  font-style: italic;
+                  opacity: 0.9;
+                "
+              >
+                <strong>Zanimljivost iz laboratorije:</strong> Tokom razvoja,
+                preopterećenje hardvera je bilo toliko da nam se sistem stalno
+                rušio zbog 'dependency hell' problema. Bukvalno smo morali da
+                redizajniramo celu arhitekturu, ubacimo Docker kontejnere i
+                napišemo "Smart Network" skriptu za samoizlečenje mreže kako
+                vozilo ne bi ostalo 'slepo i gluvo' usred testiranja!
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
       <section id="hardware" class="section-container">
         <header class="section-header animate-fade-up">
           <h2 class="section-title">Hardverska Arhitektura</h2>
@@ -189,7 +271,9 @@
       <section id="software-logic" class="section-container">
         <header class="section-header animate-fade-up">
           <h2 class="section-title">Softver koji pokreće ovaj projekat</h2>
-          <p class="section-subtitle">Bez ovoga ovaj projekat ne bi bio moguć</p>
+          <p class="section-subtitle">
+            Bez ovoga ovaj projekat ne bi bio moguć
+          </p>
         </header>
         <div class="modern-grid stagger-grid">
           <article class="modern-card interactive animate-fade-up delay-1">
@@ -240,8 +324,8 @@
               </div>
               <h3>Docker</h3>
               <p>
-                Koriscenje Doceker kontejnera za server i Smart Network, cime se izbegava
-                dependency hell i olaksava deployement, a zbog obcije
+                Koriscenje Doceker kontejnera za server i Smart Network, cime se
+                izbegava dependency hell i olaksava deployement, a zbog obcije
                 self-healing ubryava se i error recovery
               </p>
             </div>
@@ -389,7 +473,7 @@
                 <h3>Veb Dashboard</h3>
                 <p>
                   Cloud-ready panel za remote monitoring vozila direktno iz veb
-                  pregledača.
+                  pregledledača.
                 </p>
                 <div class="card-footer-high"><span>Pogledaj kod →</span></div>
               </div>
@@ -555,27 +639,27 @@
               <p>Fokus na osnovnoj funkcionalnosti i zabavi:</p>
               <ul>
                 <li>
-                  <strong>Hardver:</strong>Sastavljanje šasije i kretanje putem
-                  fixnog hotspot-a
+                  <strong>Hardver:</strong> Sastavljanje šasije i kretanje putem
+                  fiksnog hotspot-a
                 </li>
                 <li>
-                  <strong>Pokusaj upravljanja:</strong> Jednostavno daljinsko
+                  <strong>Pokušaj upravljanja:</strong> Jednostavno daljinsko
                   upravljanje
                 </li>
                 <li>
-                  <strong>Pokusaj integracije:</strong> Osnovna integracija
+                  <strong>Pokušaj integracije:</strong> Osnovna integracija
                   kamere za FPV
                 </li>
                 <li>
-                  <strong>Prva aplikacija:</strong>Osnovna alpha android
-                  aplikacija i python script-a
+                  <strong>Prva aplikacija:</strong> Osnovna alpha Android
+                  aplikacija i Python skripta
                 </li>
-                <li><strong>Dodavanje AI:</strong> Implementacije YOLOV8</li>
-                <li><strong>Fokus ,,Da radi":</strong>Sinhrona arhitectura</li>
+                <li><strong>Dodavanje AI:</strong> Implementacija YOLOv8</li>
+                <li><strong>Fokus „Da radi“:</strong> Sinhrona arhitektura</li>
                 <li>
                   <strong>Black box model:</strong> Source kod nije dostupan
                 </li>
-                <li><strong>Tip projekta:</strong>Proff of Concept</li>
+                <li><strong>Tip projekta:</strong> Proof of Concept</li>
               </ul>
             </div>
           </div>
@@ -641,6 +725,55 @@
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+    <section id="parodija" class="section-container animate-fade-up">
+        <header class="section-header">
+          <h2 class="section-title">System Analysis: Education v1.998</h2>
+          <p class="section-subtitle">
+            Detekcija tehnološkog raskoraka i kritičnih sistemskih grešaka
+          </p>
+        </header>
+
+        <div class="modern-grid">
+          <article class="modern-card interactive">
+            <div class="card-content">
+              <div class="card-top">
+                <span class="modern-icon">💾</span>
+                <span class="tech-pill-high" style="color: #ff4d4d; border-color: #ff4d4d">Legacy Error</span>
+              </div>
+              <h3>Hardware Conflict</h3>
+              <p>
+                Sistem pokušava da inicijalizuje <strong>Docker kontejnere</strong> i <strong>YOLOv26</strong>, dok školski plan i program zahteva podršku za diskete i pisanje koda u svesku (A4, kvadratići). 
+              </p>
+            </div>
+          </article>
+
+          <article class="modern-card interactive">
+            <div class="card-content">
+              <div class="card-top">
+                <span class="modern-icon">✍️</span>
+                <span class="tech-pill-high" style="color: #ffa500; border-color: #ffa500">Resource Missing</span>
+              </div>
+              <h3>IDE: Notebook 1.0</h3>
+              <p>
+                Nedostatak besplatnih edukativnih alata uspešno je rešen metodom <strong>"Suvo programiranje"</strong>. Kompajliranje koda se vrši isključivo u glavi, bez prava na Syntax Error ili Backspace.
+              </p>
+            </div>
+          </article>
+
+          <article class="modern-card interactive">
+            <div class="card-content">
+              <div class="card-top">
+                <span class="modern-icon">🚀</span>
+                <span class="tech-pill-high">Hotfix Applied</span>
+              </div>
+              <h3>Autonomni Deployment</h3>
+              <p>
+                Rešenje: Ignorisati zastareli "Stable" build obrazovanja. Implementirana samoinicijativna edukacija putem open-source dokumentacije i real-world inženjeringa. Status: <strong>Ready for 2026</strong>.
+              </p>
+            </div>
+          </article>
         </div>
       </section>
     </main>
