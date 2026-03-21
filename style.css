@@ -575,7 +575,7 @@ footer {
 .gallery-img-container {
   width: 100%;
   height: 220px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .gallery-img-container img {
