@@ -1,0 +1,27 @@
+# Pametno Vozilo / Smart Vehicle — Autonomous Edge AI Platform
+
+> Open-source edukativni sistem za Edge AI i računarsku viziju na Raspberry Pi 5. / An open-source educational system for Edge AI and computer vision on Raspberry Pi 5.
+
+## Serbian / Srpski
+
+- **Opis:** Sistem za razvoj i istraživanje aplikacija računarske vizije na samom uređaju (Edge AI) koristeći Raspberry Pi 5.
+- [Zvanični Veb Sajt](https://yoloprojekat.github.io/): Pregled hardverske arhitekture, softverskih slojeva i priznanja.
+- [GitHub Organizacija](https://github.com/yoloprojekat): Pristup celokupnom izvornom kodu projekta.
+- [RPi Backend Server](https://github.com/yoloprojekat/rpi-server): Backend napisan u Python-u i kontejnerizovan kroz Docker.
+- [Android Aplikacija](https://github.com/yoloprojekat/android-client): Klijentska aplikacija za daljinsku kontrolu i video stream.
+- [Smart Network](https://github.com/yoloprojekat/smart-network): Skripte za pouzdanu mrežnu komunikaciju i rezervni Hotspot.
+
+## English / Key Resources
+
+- **Description:** An open-source educational system for developing and researching computer vision applications directly on the edge device (Edge AI) using Raspberry Pi 5.
+- [Official Website](https://yoloprojekat.github.io/): Overview of hardware architecture, software layers, and awards.
+- [GitHub Organization](https://github.com/yoloprojekat): Access to the full source code of the project.
+- [RPi Backend Server](https://github.com/yoloprojekat/rpi-server): Backend written in Python and containerized with Docker.
+- [Android Application](https://github.com/yoloprojekat/android-client): Client application for remote control and video streaming.
+- [Smart Network](https://github.com/yoloprojekat/smart-network): Scripts for reliable network communication and backup Hotspot.
+
+## Technical Details / Tehnički detalji
+
+- **Primary Languages / Jezici:** Python, Kotlin, Bash, HTML/CSS/JS
+- **Technologies / Tehnologije:** Docker, YOLO, Google ML Kit OCR, Raspberry Pi 5, Mecanum drive
+- **License / Licenca:** MIT
