@@ -6,22 +6,23 @@
     <title>Pametno Vozilo | Autonomna Edge AI Platforma</title>
     <meta
       name="description"
-      content="Edukativna platforma i otvoreni sistem za razvoj Edge AI rešenja na Raspberry Pi 5 računaru. Osvojeno 4. mesto i Specijalna nagrada na 10. Galaksija kupu."
+      content="Edukativna platforma i otvoreni sistem za razvoj Edge AI rešenja..."
     />
     <meta
       name="keywords"
-      content="Pametno Vozilo, YOLO, Raspberry Pi 5, Edge AI, Robotika, Autonomna vozila, Galaksija kup"
+      content="Pametno Vozilo, YOLO, Raspberry Pi 5, Edge AI, Robotika"
     />
 
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
 
+    <!-- Anti-flicker Theme Script -->
     <script>
       (function () {
         const saved = localStorage.getItem("theme");
@@ -31,6 +32,7 @@
         document.documentElement.setAttribute("data-theme", saved || pref);
       })();
     </script>
+    <script src="script.js" defer></script>
   </head>
 
   <body>
@@ -44,14 +46,11 @@
     <header id="navbar" class="navbar">
       <div class="nav-container">
         <button class="logo" id="logo-btn" aria-label="Povratak na vrh">
-          <div class="logo-icon">
-            <div class="logo-ring"></div>
-            <div class="logo-dot"></div>
-          </div>
-          <div class="logo-text">
+          <span class="logo-ring"></span>
+          <span class="logo-text">
             <span class="logo-main">PAMETNO</span>
             <span class="logo-sub">VOZILO</span>
-          </div>
+          </span>
         </button>
 
         <nav class="nav-links" id="main-nav">
@@ -66,7 +65,9 @@
               <button class="nav-item" data-target="hardware">Hardver</button>
             </li>
             <li>
-              <button class="nav-item" data-target="software-logic">Softver</button>
+              <button class="nav-item" data-target="software-logic">
+                Softver
+              </button>
             </li>
             <li>
               <button class="nav-item" data-target="projects">Ekosistem</button>
@@ -114,11 +115,11 @@
           aria-expanded="false"
           aria-controls="main-nav"
         >
-          <div id="hamburger" class="hamburger">
+          <span id="hamburger" class="hamburger">
             <span class="line-top"></span>
             <span class="line-mid"></span>
             <span class="line-bot"></span>
-          </div>
+          </span>
         </button>
       </div>
     </header>
@@ -132,10 +133,14 @@
           </div>
           <h1 class="gradient-text">Autonomno Edge AI Vozilo</h1>
           <p class="hero-desc delay-1">
-            Otvorena hardverska i softverska platforma za praktičnu primenu i istraživanje Edge AI računarske vizije na Raspberry Pi 5 arhitekturi.
+            Otvorena hardverska i softverska platforma za praktičnu primenu i
+            istraživanje Edge AI računarske vizije na Raspberry Pi 5
+            arhitekturi.
           </p>
           <div class="badges delay-2">
-            <span class="high-contrast-badge">🏆 4. Mesto & Specijalna Nagrada — 10. Galaksija Kup</span>
+            <span class="high-contrast-badge"
+              >🏆 4. Mesto & Specijalna Nagrada — 10. Galaksija Kup</span
+            >
             <span class="high-badge-outline">Edukativna Platforma</span>
             <span class="high-badge-outline">YOLO & ML OCR</span>
             <span class="high-badge-outline">Docker Ekosistem</span>
@@ -145,8 +150,10 @@
 
       <section id="awards" class="section-container">
         <header class="section-header animate-fade-up">
-          <h2 class="section-title">Priznanja i Upeh na Takmičenju</h2>
-          <p class="section-subtitle">Nacionalno takmičenje u inovativnim STEM projektima</p>
+          <h2 class="section-title">Priznanja i Uspeh na Takmičenju</h2>
+          <p class="section-subtitle">
+            Nacionalno takmičenje u inovativnim STEM projektima
+          </p>
         </header>
 
         <div class="presentation-grid">
@@ -159,7 +166,8 @@
                 loading="lazy"
               />
               <figcaption class="caption">
-                Slika 1: Priznanje za osvojeno 4. mesto i Specijalnu nagradu na 10. Galaksija kupu
+                Slika 1: Priznanje za osvojeno 4. mesto i Specijalnu nagradu na
+                10. Galaksija kupu
               </figcaption>
             </figure>
           </div>
@@ -167,13 +175,26 @@
             <article class="spec-item">
               <strong class="text-primary-high">O 10. Galaksija Kupu</strong>
               <p>
-                Galaksija kup je najveće zvanično nacionalno takmičenje učenika elektrotehničkih škola u Srbiji u oblasti robotike, elektronike i softverskih inovacija, koje organizuju Zajednica elektrotehničkih škola Srbije (ZETŠS) i Nordeus fondacija. Jubilarni, 10. ciklus okupio je najbolje STEM projekte srednjoškolaca širom zemlje.
+                Galaksija kup je najveće zvanično nacionalno takmičenje učenika
+                elektrotehničkih škola u Srbiji u oblasti robotike, elektronike
+                i softverskih inovacija, koje organizuju Zajednica
+                elektrotehničkih škola Srbije (ZETŠS) i Nordeus fondacija.
+                Jubilarni, 10. ciklus okupio je najbolje STEM projekte
+                srednjoškolaca širom zemlje.
               </p>
             </article>
             <article class="spec-item">
-              <strong class="text-primary-high">Osvojeno 4. Mesto i Specijalna Nagrada</strong>
+              <strong class="text-primary-high"
+                >Osvojeno 4. Mesto i Specijalna Nagrada</strong
+              >
               <p>
-                Projekat <strong>Pametno Vozilo</strong> osvojio je <strong>4. mesto</strong> u ukupnom plasmanu u jakoj konkurenciji finalista iz cele Srbije, kao i <strong>Specijalnu nagradu za zapaženi rezultat</strong>. Posebno su istaknuti modularni softverski sloj, primena Edge AI inferencije u realnom vremenu i napredna kontejnerizacija sistema.
+                Projekat <strong>Pametno Vozilo</strong> osvojio je
+                <strong>4. mesto</strong> u ukupnom plasmanu u jakoj
+                konkurenciji finalista iz cele Srbije, kao i
+                <strong>Specijalnu nagradu za zapaženi rezultat</strong>.
+                Posebno su istaknuti modularni softverski sloj, primena Edge AI
+                inferencije u realnom vremenu i napredna kontejnerizacija
+                sistema.
               </p>
             </article>
           </div>
@@ -183,7 +204,9 @@
       <section id="intro" class="section-container">
         <header class="section-header animate-fade-up">
           <h2 class="section-title">Motivacija i Koncept</h2>
-          <p class="section-subtitle">Povezivanje teorijskih osnova sa realnim inženjerskim izazovima</p>
+          <p class="section-subtitle">
+            Povezivanje teorijskih osnova sa realnim inženjerskim izazovima
+          </p>
         </header>
         <div class="modern-grid stagger-grid">
           <article class="modern-card interactive animate-fade-up delay-1">
@@ -194,12 +217,18 @@
               </div>
               <h3>Praktični Jaz u Nastavi</h3>
               <p>
-                Tradicionalno obrazovanje u oblasti računarskih nauka često ostaje usmereno na teoriju i izolovane algoritme. Nedostaje rad na opipljivom hardveru gde se studenti i učenici susreću sa realnim promenljivim uslovima, kašnjenjem signala i ograničenim resursima.
+                Tradicionalno obrazovanje u oblasti računarskih nauka često
+                ostaje usmereno na teoriju i izolovane algoritme. Nedostaje rad
+                na opipljivom hardveru gde se studenti i učenici susreću sa
+                realnim promenljivim uslovima, kašnjenjem signala i ograničenim
+                resursima.
               </p>
             </div>
           </article>
 
-          <article class="modern-card interactive featured-card animate-fade-up delay-2">
+          <article
+            class="modern-card interactive featured-card animate-fade-up delay-2"
+          >
             <div class="card-content">
               <div class="card-top">
                 <span class="modern-icon" aria-hidden="true">⚙️</span>
@@ -207,7 +236,10 @@
               </div>
               <h3>Cilj Projekta</h3>
               <p>
-                Pametno Vozilo pruža integrisano okruženje za rad sa modelima detekcije objekata i prepoznavanja teksta u realnom vremenu. Sistem uklanja prepreke pri podešavanju okruženja i omogućava direktan rad na kontroli vozila i obradi podataka.
+                Pametno Vozilo pruža integrisano okruženje za rad sa modelima
+                detekcije objekata i prepoznavanja teksta u realnom vremenu.
+                Sistem uklanja prepreke pri podešavanju okruženja i omogućava
+                direktan rad na kontroli vozila i obradi podataka.
               </p>
             </div>
           </article>
@@ -220,7 +252,10 @@
               </div>
               <h3>Arhitektonski Izazovi</h3>
               <p>
-                Tokom razvoja, spajanje sinhronih procesa obrade slike i upravljanja motorima dovodilo je do zastoja u radu. Problem je rešen prelaskom na izolovane Docker kontejnere, višenitnu obradu i kreiranjem skripte za automatsko obnavljanje mrežne veze.
+                Tokom razvoja, spajanje sinhronih procesa obrade slike i
+                upravljanja motorima dovodilo je do zastoja u radu. Problem je
+                rešen prelaskom na izolovane Docker kontejnere, višenitnu obradu
+                i kreiranjem skripte za automatsko obnavljanje mrežne veze.
               </p>
             </div>
           </article>
@@ -230,7 +265,9 @@
       <section id="hardware" class="section-container">
         <header class="section-header animate-fade-up">
           <h2 class="section-title">Hardverska Arhitektura</h2>
-          <p class="section-subtitle">Pregled ključnih komponenti i modula sistema</p>
+          <p class="section-subtitle">
+            Pregled ključnih komponenti i modula sistema
+          </p>
         </header>
         <div class="presentation-grid">
           <div class="image-container animate-fade-right">
@@ -250,19 +287,22 @@
             <article class="spec-item">
               <strong class="text-primary-high">Napajanje i Regulacija</strong>
               <p>
-                XL4015 Step-down konverter (5.1V, 5A) obezbeđuje stabilan rad Raspberry Pi 5 računara pod opterećenjem.
+                XL4015 Step-down konverter (5.1V, 5A) obezbeđuje stabilan rad
+                Raspberry Pi 5 računara pod opterećenjem.
               </p>
             </article>
             <article class="spec-item">
               <strong class="text-primary-high">Pogonski Sistem</strong>
               <p>
-                Četiri DC motora sa Mecanum točkovima omogućavaju omnidirekciono kretanje i precizno pozicioniranje.
+                Četiri DC motora sa Mecanum točkovima omogućavaju omnidirekciono
+                kretanje i precizno pozicioniranje.
               </p>
             </article>
             <article class="spec-item">
               <strong class="text-primary-high">Senzorski Modul</strong>
               <p>
-                Raspberry Pi Camera Module V2 (8MP) povezana preko MIPI CSI-2 interfejsa za akviziciju video strima visoke rezolucije.
+                Raspberry Pi Camera Module V2 (8MP) povezana preko MIPI CSI-2
+                interfejsa za akviziciju video strima visoke rezolucije.
               </p>
             </article>
           </div>
@@ -272,7 +312,9 @@
       <section id="software-logic" class="section-container">
         <header class="section-header animate-fade-up">
           <h2 class="section-title">Softverski Arhitektonski Sloj</h2>
-          <p class="section-subtitle">Komponente zadužene za obradu podataka i upravljanje</p>
+          <p class="section-subtitle">
+            Komponente zadužene za obradu podataka i upravljanje
+          </p>
         </header>
         <div class="modern-grid stagger-grid">
           <article class="modern-card interactive animate-fade-up delay-1">
@@ -283,10 +325,13 @@
               </div>
               <h3>YOLO AI Model</h3>
               <p>
-                Inference model prilagođen za obradu 30 FPS video strima, detekciju objekata na putu (5-10 FPS) i njihovo konstantno praćenje.
+                Inference model prilagođen za obradu 30 FPS video strima,
+                detekciju objekata na putu (5-10 FPS) i njihovo konstantno
+                praćenje.
               </p>
             </div>
           </article>
+
           <article class="modern-card interactive animate-fade-up delay-2">
             <div class="card-content">
               <div class="card-top">
@@ -295,10 +340,12 @@
               </div>
               <h3>Google ML OCR</h3>
               <p>
-                Ekstrakcija teksta sa saobraćajnih znakova i tablica, uz automatsku korekciju rotacije i izvršavanje tekstualnih komandi.
+                Ekstrakcija teksta sa saobraćajnih znakova i tablica, uz
+                automatsku korekciju rotacije i izvršavanje tekstualnih komandi.
               </p>
             </div>
           </article>
+
           <article class="modern-card interactive animate-fade-up delay-3">
             <div class="card-content">
               <div class="card-top">
@@ -307,10 +354,12 @@
               </div>
               <h3>Višenitni Rad</h3>
               <p>
-                Asinhrona i paralelna obrada ulaznog video strima, AI inferencije i generisanja PWM signala za kontrole motora.
+                Asinhrona i paralelna obrada ulaznog video strima, AI
+                inferencije i generisanja PWM signala za kontrole motora.
               </p>
             </div>
           </article>
+
           <article class="modern-card interactive animate-fade-up delay-3">
             <div class="card-content">
               <div class="card-top">
@@ -319,10 +368,12 @@
               </div>
               <h3>Docker Okruženje</h3>
               <p>
-                Izolovani servisi za server i mrežne skripte eliminišu konflikte u zavisnostima koda i ubrzavaju oporavak od grešaka.
+                Izolovani servisi za server i mrežne skripte eliminišu konflikte
+                u zavisnostima koda i ubrzavaju oporavak od grešaka.
               </p>
             </div>
           </article>
+
           <article class="modern-card interactive animate-fade-up delay-1">
             <div class="card-content">
               <div class="card-top">
@@ -331,10 +382,12 @@
               </div>
               <h3>GitHub Actions CI/CD</h3>
               <p>
-                Automatsko testiranje i build izmena pri svakom commit-u obezbeđuju stabilnost koda tokom kontinuiranog razvoja.
+                Automatsko testiranje i build izmena pri svakom commit-u
+                obezbeđuju stabilnost koda tokom kontinuiranog razvoja.
               </p>
             </div>
           </article>
+
           <article class="modern-card interactive animate-fade-up delay-2">
             <div class="card-content">
               <div class="card-top">
@@ -343,7 +396,8 @@
               </div>
               <h3>Docker Hub Registry</h3>
               <p>
-                Centralizovani repozitorijum sa spremljenim image-ima omogućava brzu instalaciju sistema na novom Raspberry Pi uređaju.
+                Centralizovani repozitorijum sa spremljenim image-ima omogućava
+                brzu instalaciju sistema na novom Raspberry Pi uređaju.
               </p>
             </div>
           </article>
@@ -353,7 +407,9 @@
       <section id="projects" class="section-container animate-fade-up">
         <header class="section-header">
           <h2 class="section-title">Modularni Ekosistem Repozitorijuma</h2>
-          <p class="section-subtitle">Izvorni kod je javno dostupan i podeljen po modulima</p>
+          <p class="section-subtitle">
+            Izvorni kod je javno dostupan i podeljen po modulima
+          </p>
         </header>
         <div class="modern-grid">
           <a
@@ -370,9 +426,12 @@
                 </div>
                 <h3>RPi Server</h3>
                 <p>
-                  Glavni backend servis. Upravlja periferijama, detekcijom objekata i distribucijom MJPEG video strima.
+                  Glavni backend servis. Upravlja periferijama, detekcijom
+                  objekata i distribucijom MJPEG video strima.
                 </p>
-                <div class="card-footer-high"><span>Pregled repozitorijuma →</span></div>
+                <div class="card-footer-high">
+                  <span>Pregled repozitorijuma →</span>
+                </div>
               </div>
             </article>
           </a>
@@ -391,9 +450,12 @@
                 </div>
                 <h3>Smart Network</h3>
                 <p>
-                  Mrežni servis zadužen za stabilnost veze. Automatski podiže lokalnu Hotspot mrežu u odsustvu eksterne.
+                  Mrežni servis zadužen za stabilnost veze. Automatski podiže
+                  lokalnu Hotspot mrežu u odsustvu eksterne.
                 </p>
-                <div class="card-footer-high"><span>Pregled repozitorijuma →</span></div>
+                <div class="card-footer-high">
+                  <span>Pregled repozitorijuma →</span>
+                </div>
               </div>
             </article>
           </a>
@@ -412,9 +474,12 @@
                 </div>
                 <h3>Model Pipeline</h3>
                 <p>
-                  Skripte za optimizaciju, kvantizaciju i konverziju YOLO modela za hardverski ubrzan rad.
+                  Skripte za optimizaciju, kvantizaciju i konverziju YOLO modela
+                  za hardverski ubrzan rad.
                 </p>
-                <div class="card-footer-high"><span>Pregled repozitorijuma →</span></div>
+                <div class="card-footer-high">
+                  <span>Pregled repozitorijuma →</span>
+                </div>
               </div>
             </article>
           </a>
@@ -433,9 +498,12 @@
                 </div>
                 <h3>Android Klijent</h3>
                 <p>
-                  Aplikacija za kontrolu kretanja u realnom vremenu i prikaz video strima niske latencije.
+                  Aplikacija za kontrolu kretanja u realnom vremenu i prikaz
+                  video strima niske latencije.
                 </p>
-                <div class="card-footer-high"><span>Pregled repozitorijuma →</span></div>
+                <div class="card-footer-high">
+                  <span>Pregled repozitorijuma →</span>
+                </div>
               </div>
             </article>
           </a>
@@ -454,9 +522,12 @@
                 </div>
                 <h3>Web Dashboard</h3>
                 <p>
-                  Korisnički interfejs za nadzor rada vozila i analitiku parametara direktno iz veb pregledača.
+                  Korisnički interfejs za nadzor rada vozila i analitiku
+                  parametara direktno iz veb pregledača.
                 </p>
-                <div class="card-footer-high"><span>Pregled repozitorijuma →</span></div>
+                <div class="card-footer-high">
+                  <span>Pregled repozitorijuma →</span>
+                </div>
               </div>
             </article>
           </a>
@@ -475,9 +546,12 @@
                 </div>
                 <h3>RPi Server (Legacy)</h3>
                 <p>
-                  Inicijalna verzija backenda zasnovana na nativnim Linux servisima i WebSockets komunikaciji.
+                  Inicijalna verzija backenda zasnovana na nativnim Linux
+                  servisima i WebSockets komunikaciji.
                 </p>
-                <div class="card-footer-high"><span>Pregled repozitorijuma →</span></div>
+                <div class="card-footer-high">
+                  <span>Pregled repozitorijuma →</span>
+                </div>
               </div>
             </article>
           </a>
@@ -487,10 +561,14 @@
       <section id="use-cases" class="section-container">
         <header class="section-header animate-fade-up">
           <h2 class="section-title">Mogućnosti Primene</h2>
-          <p class="section-subtitle">Od učenja koncepta do praktičnih scenarija upotrebe</p>
+          <p class="section-subtitle">
+            Od učenja koncepta do praktičnih scenarija upotrebe
+          </p>
         </header>
         <div class="modern-grid stagger-grid">
-          <article class="modern-card interactive featured-card animate-fade-up delay-1">
+          <article
+            class="modern-card interactive featured-card animate-fade-up delay-1"
+          >
             <div class="card-content">
               <div class="card-top">
                 <span class="modern-icon" aria-hidden="true">🎓</span>
@@ -498,7 +576,8 @@
               </div>
               <h3>Edukacija i R&D</h3>
               <p>
-                Osnova za učenje o radu Edge AI modela, kreiranju Linux servisa i razvoju kontrolnih algoritmima u Python-u.
+                Osnova za učenje o radu Edge AI modela, kreiranju Linux servisa
+                i razvoju kontrolnih algoritmima u Python-u.
               </p>
             </div>
           </article>
@@ -511,7 +590,9 @@
               </div>
               <h3>Analiza Saobraćaja</h3>
               <p>
-                Mogućnost prilagođavanja detekcije za brojanje vozila, prepoznavanje tablica i analizu gustine saobraćaja na određenoj deonici.
+                Mogućnost prilagođavanja detekcije za brojanje vozila,
+                prepoznavanje tablica i analizu gustine saobraćaja na određenoj
+                deonici.
               </p>
             </div>
           </article>
@@ -524,7 +605,8 @@
               </div>
               <h3>Unutrašnja Logistika (AGV)</h3>
               <p>
-                Test-platforma za autonomne transportere koji prate vizuelne oznake i izbegavaju prepreke unutar magacinskih prostora.
+                Test-platforma za autonomne transportere koji prate vizuelne
+                oznake i izbegavaju prepreke unutar magacinskih prostora.
               </p>
             </div>
           </article>
@@ -534,12 +616,18 @@
       <section id="galerija" class="section-container">
         <header class="section-header">
           <h2 class="section-title">Galerija Projekta</h2>
-          <p class="section-subtitle">Vizuelni prikaz hardvera, priznanja i kontrolnih interfejsa</p>
+          <p class="section-subtitle">
+            Vizuelni prikaz hardvera, priznanja i kontrolnih interfejsa
+          </p>
         </header>
         <div class="modern-grid">
           <div class="gallery-card">
             <div class="gallery-img-container">
-              <img src="assets/nagrada.avif" alt="Priznanje sa Galaksija kupa" />
+              <img
+                src="assets/nagrada.avif"
+                alt="Priznanje sa Galaksija kupa"
+                loading="lazy"
+              />
             </div>
             <div class="gallery-info">
               <p>4. Mesto i Specijalna nagrada na 10. Galaksija kupu</p>
@@ -548,7 +636,11 @@
 
           <div class="gallery-card">
             <div class="gallery-img-container">
-              <img src="assets/vozilo.jpg" alt="Pametno Vozilo - Eksterijer" />
+              <img
+                src="assets/vozilo.avif"
+                alt="Pametno Vozilo - Eksterijer"
+                loading="lazy"
+              />
             </div>
             <div class="gallery-info">
               <p>Fizička konstrukcija vozila sa mehanikom i senzorima</p>
@@ -557,7 +649,11 @@
 
           <div class="gallery-card">
             <div class="gallery-img-container">
-              <img src="assets/ocr.jpg" alt="Android Aplikacija OCR" />
+              <img
+                src="assets/ocr.jpg"
+                alt="Android Aplikacija OCR"
+                loading="lazy"
+              />
             </div>
             <div class="gallery-info">
               <p>Korisnički interfejs mobilne klijentske aplikacije</p>
@@ -566,7 +662,7 @@
 
           <div class="gallery-card">
             <div class="gallery-img-container">
-              <img src="assets/yolo.jpg" alt="YOLO Detekcija" />
+              <img src="assets/yolo.jpg" alt="YOLO Detekcija" loading="lazy" />
             </div>
             <div class="gallery-info">
               <p>Prikaz rezultata obrade i detekcije u realnom vremenu</p>
@@ -575,7 +671,11 @@
 
           <div class="gallery-card">
             <div class="gallery-img-container">
-              <img src="assets/docker log text.PNG" alt="Docker Log Prikaz" />
+              <img
+                src="assets/docker log text.PNG"
+                alt="Docker Log Prikaz"
+                loading="lazy"
+              />
             </div>
             <div class="gallery-info">
               <p>Prikaz sistemskih zapisa unutar Docker kontejnera na RPi5</p>
@@ -584,7 +684,11 @@
 
           <div class="gallery-card">
             <div class="gallery-img-container">
-              <img src="assets/htop.PNG" alt="Performanse Sistema" />
+              <img
+                src="assets/htop.PNG"
+                alt="Performanse Sistema"
+                loading="lazy"
+              />
             </div>
             <div class="gallery-info">
               <p>Praćenje opterećenja procesora i memorijskih resursa</p>
@@ -596,7 +700,9 @@
       <section id="roadmap" class="section-container">
         <header class="section-header">
           <h2 class="section-title">Faze Razvoja Projekta</h2>
-          <p class="section-subtitle">Pregled dosadašnjih verzija i planiranih unapređenja</p>
+          <p class="section-subtitle">
+            Pregled dosadašnjih verzija i planiranih unapređenja
+          </p>
         </header>
 
         <div class="roadmap-timeline">
@@ -607,11 +713,25 @@
               <h3>Faza I: Prototip i Osnovna Kontrola</h3>
               <p>Osnovna verifikacija koncepta i hardvera:</p>
               <ul>
-                <li><strong>Hardver:</strong> Sastavljanje šasije i osnovna kontrola kretanja.</li>
-                <li><strong>Komunikacija:</strong> Daljinsko upravljanje preko fiksnog mrežnog Hotspot-a.</li>
-                <li><strong>Video Strim:</strong> Osnovna FPV integracija kamere.</li>
-                <li><strong>Softver:</strong> Prva verzija klijentske aplikacije i sinhronih Python skripti.</li>
-                <li><strong>AI Model:</strong> Testiranje rada sa YOLOv8 arhitekturom.</li>
+                <li>
+                  <strong>Hardver:</strong> Sastavljanje šasije i osnovna
+                  kontrola kretanja.
+                </li>
+                <li>
+                  <strong>Komunikacija:</strong> Daljinsko upravljanje preko
+                  fiksnog mrežnog Hotspot-a.
+                </li>
+                <li>
+                  <strong>Video Strim:</strong> Osnovna FPV integracija kamere.
+                </li>
+                <li>
+                  <strong>Softver:</strong> Prva verzija klijentske aplikacije i
+                  sinhronih Python skripti.
+                </li>
+                <li>
+                  <strong>AI Model:</strong> Testiranje rada sa YOLOv8
+                  arhitekturom.
+                </li>
               </ul>
             </div>
           </div>
@@ -621,14 +741,35 @@
             <div class="roadmap-card">
               <div class="phase-tag">Verzija 2.0</div>
               <h3>Faza II: Modularna Arhitektura i Priznanja</h3>
-              <p>Stabilizacija sistema, prelazak na izolovano okruženje i takmičarski uspeh:</p>
+              <p>
+                Stabilizacija sistema, prelazak na izolovano okruženje i
+                takmičarski uspeh:
+              </p>
               <ul>
-                <li><strong>Uspeh na Takmičenju:</strong> Osvojeno 4. mesto i Specijalna nagrada na 10. Galaksija kupu.</li>
-                <li><strong>Refaktoring:</strong> Nova arhitektura zasnovana na Docker kontejnerima.</li>
-                <li><strong>AI Vizija:</strong> Implementacija i optimizacija YOLO i OCR modela.</li>
-                <li><strong>Mrežna Stabilnost:</strong> Samostalni mrežni servis za automatsko povezivanje.</li>
-                <li><strong>Aplikacija:</strong> Stabilan Android UI za upravljanje i pregled analitike.</li>
-                <li><strong>Open Source:</strong> Kod publiciran na GitHub-u pod MIT licencom.</li>
+                <li>
+                  <strong>Uspeh na Takmičenju:</strong> Osvojeno 4. mesto i
+                  Specijalna nagrada na 10. Galaksija kupu.
+                </li>
+                <li>
+                  <strong>Refaktoring:</strong> Nova arhitektura zasnovana na
+                  Docker kontejnerima.
+                </li>
+                <li>
+                  <strong>AI Vizija:</strong> Implementacija i optimizacija YOLO
+                  i OCR modela.
+                </li>
+                <li>
+                  <strong>Mrežna Stabilnost:</strong> Samostalni mrežni servis
+                  za automatsko povezivanje.
+                </li>
+                <li>
+                  <strong>Aplikacija:</strong> Stabilan Android UI za
+                  upravljanje i pregled analitike.
+                </li>
+                <li>
+                  <strong>Open Source:</strong> Kod publiciran na GitHub-u pod
+                  MIT licencom.
+                </li>
               </ul>
             </div>
           </div>
@@ -640,9 +781,18 @@
               <h3>Faza III: Napredna Autonomija</h3>
               <p>Širenje funkcionalnosti i autonomnog rada:</p>
               <ul>
-                <li><strong>Programabilnost:</strong> Integracija grafičkog API-ja za učenje osnova programiranja.</li>
-                <li><strong>Senzori:</strong> Dodavanje LiDAR senzora i primena SLAM algoritmima za mapiranje.</li>
-                <li><strong>Standardizacija:</strong> Optimizacija dokumentacije za jednostavnu replikaciju projekta.</li>
+                <li>
+                  <strong>Programabilnost:</strong> Integracija grafičkog API-ja
+                  za učenje osnova programiranja.
+                </li>
+                <li>
+                  <strong>Senzori:</strong> Dodavanje LiDAR senzora i primena
+                  SLAM algoritmima za mapiranje.
+                </li>
+                <li>
+                  <strong>Standardizacija:</strong> Optimizacija dokumentacije
+                  za jednostavnu replikaciju projekta.
+                </li>
               </ul>
             </div>
           </div>
@@ -652,19 +802,23 @@
       <section id="parodija" class="section-container animate-fade-up">
         <header class="section-header">
           <h2 class="section-title">Poređenje: Teorija vs. Praksa</h2>
-          <p class="section-subtitle">Analiza razlika između klasičnog učenja i rada na realnim sistemima</p>
+          <p class="section-subtitle">
+            Analiza razlika između klasičnog učenja i rada na realnim sistemima
+          </p>
         </header>
 
         <div class="modern-grid">
           <article class="modern-card interactive">
             <div class="card-content">
               <div class="card-top">
-                <span class="modern-icon">📄</span>
+                <span class="modern-icon" aria-hidden="true">📄</span>
                 <span class="tech-pill-high">Klasičan Pristup</span>
               </div>
               <h3>Suva Teorija</h3>
               <p>
-                Fokus na pisanju sintakse na papiru bez mogućnosti izvršavanja koda, uočavanja grešaka u realnom vremenu ili rada sa hardverskim ograničenjima.
+                Fokus na pisanju sintakse na papiru bez mogućnosti izvršavanja
+                koda, uočavanja grešaka u realnom vremenu ili rada sa
+                hardverskim ograničenjima.
               </p>
             </div>
           </article>
@@ -672,12 +826,13 @@
           <article class="modern-card interactive">
             <div class="card-content">
               <div class="card-top">
-                <span class="modern-icon">⚠️</span>
+                <span class="modern-icon" aria-hidden="true">⚠️</span>
                 <span class="tech-pill-high">Ograničenja</span>
               </div>
               <h3>Nedostatak Okruženja</h3>
               <p>
-                Rešavanje zadataka bez dodira sa mrežnim protokolima, kašnjenjem signala, upravljanjem memorijom i optimizacijom resursa.
+                Rešavanje zadataka bez dodira sa mrežnim protokolima, kašnjenjem
+                signala, upravljanjem memorijom i optimizacijom resursa.
               </p>
             </div>
           </article>
@@ -685,12 +840,13 @@
           <article class="modern-card interactive">
             <div class="card-content">
               <div class="card-top">
-                <span class="modern-icon">⚙️</span>
+                <span class="modern-icon" aria-hidden="true">⚙️</span>
                 <span class="tech-pill-high">Praktičan Rad</span>
               </div>
               <h3>Rad na Realnom Sistemu</h3>
               <p>
-                Razvoj kroz neposredno rešavanje problema, kontejnerizaciju aplikacija, rad sa Edge AI modelima i samostalno istraživanje.
+                Razvoj kroz neposredno rešavanje problema, kontejnerizaciju
+                aplikacija, rad sa Edge AI modelima i samostalno istraživanje.
               </p>
             </div>
           </article>
@@ -701,7 +857,7 @@
     <footer class="footer section-container">
       <div class="footer-grid">
         <div class="footer-left animate-fade-up">
-          <div class="logo-text" style="margin-bottom: 15px">
+          <div class="logo-text">
             <span class="logo-main">PAMETNO</span>
             <span class="logo-sub">VOZILO</span>
           </div>
@@ -718,7 +874,12 @@
         <div class="footer-right animate-fade-up delay-1">
           <div class="qr-wrapper">
             <div class="qr-container">
-              <img src="assets/qr-sajt.avif" alt="QR Kod za pristup sajtu" class="qr-img" />
+              <img
+                src="assets/qr-sajt.avif"
+                alt="QR Kod za pristup sajtu"
+                class="qr-img"
+                loading="lazy"
+              />
             </div>
             <div class="qr-text">
               <span class="qr-label">Digitalna verzija</span>
@@ -727,7 +888,5 @@
         </div>
       </div>
     </footer>
-
-    <script src="script.js"></script>
   </body>
 </html>

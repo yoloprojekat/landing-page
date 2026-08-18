@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeToggle = document.getElementById("theme-toggle");
   const themeIcon = document.getElementById("theme-icon");
   const logoBtn = document.getElementById("logo-btn");
-  const navItems = document.querySelectorAll(".nav-item");
 
   // --- State ---
   let isMenuOpen = false;
@@ -69,29 +68,32 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: "smooth" }),
   );
 
-  navItems.forEach((item) => {
-    item.addEventListener("click", (e) => {
-      const targetId = e.target.getAttribute("data-target");
-      const targetEl = document.getElementById(targetId);
-      if (targetEl) {
-        window.scrollTo({ top: targetEl.offsetTop - 90, behavior: "smooth" });
-      }
-      if (window.innerWidth <= 1024) closeMenu();
-    });
+  // Event Delegation for Navigation Items (Prevents forced reflow & reduces memory overhead)
+  navLinks.addEventListener("click", (e) => {
+    const navItem = e.target.closest(".nav-item");
+    if (!navItem) return;
+
+    const targetId = navItem.getAttribute("data-target");
+    const targetEl = document.getElementById(targetId);
+
+    if (targetEl) {
+      // Non-reflow geometry calculation using getBoundingClientRect
+      const targetPosition =
+        targetEl.getBoundingClientRect().top + window.scrollY - 90;
+      window.scrollTo({ top: targetPosition, behavior: "smooth" });
+    }
+
+    if (window.innerWidth <= 1024) closeMenu();
   });
 
-  // --- Scroll Styling (Throttled) ---
+  // --- Scroll Styling (Throttled & Non-blocking) ---
   let ticking = false;
   window.addEventListener(
     "scroll",
     () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          if (window.scrollY > 20) {
-            navbar.classList.add("scrolled");
-          } else {
-            navbar.classList.remove("scrolled");
-          }
+          navbar.classList.toggle("scrolled", window.scrollY > 20);
           ticking = false;
         });
         ticking = true;
