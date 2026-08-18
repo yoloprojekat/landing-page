@@ -13,11 +13,11 @@
       content="Pametno Vozilo, YOLO, Raspberry Pi 5, Edge AI, Robotika"
     />
 
-    <!-- Establish early connections to Google domains -->
+    <!-- Preconnect to Font CDNs -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Asynchronous non-blocking stylesheet load -->
+    <!-- Asynchronous Non-Blocking Google Fonts Loading -->
     <link
       rel="preload"
       as="style"
@@ -29,18 +29,19 @@
       media="print"
       onload="this.media = 'all'"
     />
-
-    <!-- Fallback for environments without JavaScript -->
     <noscript>
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
       />
     </noscript>
+
+    <!-- Critical CSS Preloading -->
     <link
       rel="preload"
       href="style.css"
       as="style"
+      fetchpriority="high"
       onload="this.rel = 'stylesheet'"
     />
     <noscript><link rel="stylesheet" href="style.css" /></noscript>
@@ -186,6 +187,9 @@
                 src="assets/nagrada.avif"
                 alt="Priznanje i diplome sa 10. Galaksija kupa"
                 class="hardware-img"
+                width="800"
+                height="500"
+                decoding="async"
                 loading="lazy"
               />
               <figcaption class="caption">
@@ -299,6 +303,9 @@
                 src="assets/hardverska-sema.avif"
                 alt="Šema povezivanja Raspberry Pi 5, motora i senzora"
                 class="hardware-img"
+                width="800"
+                height="500"
+                decoding="async"
                 loading="lazy"
               />
               <figcaption class="caption">
@@ -649,6 +656,9 @@
               <img
                 src="assets/nagrada.avif"
                 alt="Priznanje sa Galaksija kupa"
+                width="400"
+                height="220"
+                decoding="async"
                 loading="lazy"
               />
             </div>
@@ -662,6 +672,9 @@
               <img
                 src="assets/vozilo.avif"
                 alt="Pametno Vozilo - Eksterijer"
+                width="400"
+                height="220"
+                decoding="async"
                 loading="lazy"
               />
             </div>
@@ -675,6 +688,9 @@
               <img
                 src="assets/ocr.jpg"
                 alt="Android Aplikacija OCR"
+                width="400"
+                height="220"
+                decoding="async"
                 loading="lazy"
               />
             </div>
@@ -685,7 +701,14 @@
 
           <div class="gallery-card">
             <div class="gallery-img-container">
-              <img src="assets/yolo.jpg" alt="YOLO Detekcija" loading="lazy" />
+              <img
+                src="assets/yolo.jpg"
+                alt="YOLO Detekcija"
+                width="400"
+                height="220"
+                decoding="async"
+                loading="lazy"
+              />
             </div>
             <div class="gallery-info">
               <p>Prikaz rezultata obrade i detekcije u realnom vremenu</p>
@@ -697,6 +720,9 @@
               <img
                 src="assets/docker log text.PNG"
                 alt="Docker Log Prikaz"
+                width="400"
+                height="220"
+                decoding="async"
                 loading="lazy"
               />
             </div>
@@ -710,6 +736,9 @@
               <img
                 src="assets/htop.PNG"
                 alt="Performanse Sistema"
+                width="400"
+                height="220"
+                decoding="async"
                 loading="lazy"
               />
             </div>
@@ -891,22 +920,6 @@
               Zahvalnost bivšem mentoru: <strong>Dejanu Batanjcu</strong>
             </p>
             <p class="school-info">ETŠ „Nikola Tesla“ Niš • 2026</p>
-          </div>
-        </div>
-
-        <div class="footer-right animate-fade-up delay-1">
-          <div class="qr-wrapper">
-            <div class="qr-container">
-              <img
-                src="assets/qr-sajt.avif"
-                alt="QR Kod za pristup sajtu"
-                class="qr-img"
-                loading="lazy"
-              />
-            </div>
-            <div class="qr-text">
-              <span class="qr-label">Digitalna verzija</span>
-            </div>
           </div>
         </div>
       </div>
