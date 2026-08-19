@@ -14,6 +14,7 @@
       content="Pametno Vozilo, YOLO, Raspberry Pi 5, Edge AI, Robotika"
     />
 
+    <link rel="canonical" href="https://yoloprojekat.com/" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link
       rel="preload"
@@ -21,13 +22,15 @@
       as="font"
       type="font/woff2"
       crossorigin
+      fetchpriority="high"
     />
     <link
       rel="preload"
-      href="assets/fonts/plus-jakarta-sans-latin-ext.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
+      href="assets/nagrada.avif"
+      as="image"
+      type="image/avif"
+      media="(min-width: 900px)"
+      fetchpriority="high"
     />
     <style>
       @font-face {
@@ -130,13 +133,10 @@
       .image-container,
       .modern-card,
       .gallery-card,
-      .video-wrapper,
       .roadmap-card,
       .qr-wrapper {
         background: var(--card-bg-glass);
         border: 1px solid var(--border);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
         border-radius: 24px;
       }
       .navbar {
@@ -544,17 +544,6 @@
       .gallery-info {
         padding: 20px;
       }
-      .video-wrapper {
-        padding: 12px;
-        border-radius: 32px;
-        max-width: 900px;
-        margin: 0 auto;
-      }
-      .main-video {
-        width: 100%;
-        border-radius: 22px;
-        display: block;
-      }
       .roadmap-timeline {
         position: relative;
         max-width: 900px;
@@ -706,17 +695,10 @@
         text-transform: uppercase;
         letter-spacing: 0.5px;
       }
-      .qr-sub {
-        font-size: 0.85rem;
-        color: var(--text-dim);
-        max-width: 160px;
-        line-height: 1.4;
-      }
       .animate-fade-up,
       .animate-fade-right,
       .animate-fade-left {
         opacity: 0;
-        will-change: opacity, transform;
       }
       .animate-fade-up {
         transform: translateY(30px);
@@ -843,8 +825,25 @@
         .qr-text {
           align-items: center;
         }
-        .qr-sub {
-          max-width: none;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .animate-fade-up,
+        .animate-fade-right,
+        .animate-fade-left,
+        .navbar,
+        .modern-card,
+        .gallery-card,
+        .qr-wrapper,
+        .nav-item::after,
+        .logo-ring,
+        .hamburger span {
+          transition: none;
+        }
+        .animate-fade-up,
+        .animate-fade-right,
+        .animate-fade-left {
+          opacity: 1;
+          transform: none;
         }
       }
     </style>
@@ -852,14 +851,16 @@
     <!-- Anti-flicker Theme Script -->
     <script>
       (function () {
-        const saved = localStorage.getItem("theme");
-        const pref = window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light";
-        document.documentElement.setAttribute("data-theme", saved || pref);
+        try {
+          var saved = localStorage.getItem("theme");
+          var pref = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+          document.documentElement.setAttribute("data-theme", saved || pref);
+        } catch (e) {}
       })();
     </script>
-    <script src="script.js" defer></script>
+    <script src="script.min.js" defer></script>
   </head>
 
   <body>
@@ -962,7 +963,7 @@
             <span class="logo-sub">VOZILO</span>
           </div>
           <h1 class="gradient-text">Autonomno Edge AI Vozilo</h1>
-          <p class="hero-desc delay-1">
+          <p class="hero-desc">
             Otvorena hardverska i softverska platforma za praktičnu primenu i
             istraživanje Edge AI računarske vizije na Raspberry Pi 5
             arhitekturi.
@@ -997,6 +998,7 @@
                 height="707"
                 decoding="async"
                 loading="lazy"
+                sizes="(max-width: 900px) calc(100vw - 88px), min(640px, 52vw)"
               />
               <figcaption class="caption">
                 Slika 1: Priznanje za osvojeno 4. mesto i Specijalnu nagradu na
@@ -1041,7 +1043,7 @@
             Povezivanje teorijskih osnova sa realnim inženjerskim izazovima
           </p>
         </header>
-        <div class="modern-grid stagger-grid">
+        <div class="modern-grid">
           <article class="modern-card interactive animate-fade-up delay-1">
             <div class="card-content">
               <div class="card-top">
@@ -1113,6 +1115,8 @@
                 height="576"
                 decoding="async"
                 loading="lazy"
+                fetchpriority="low"
+                sizes="(max-width: 900px) calc(100vw - 88px), min(640px, 52vw)"
               />
               <figcaption class="caption">
                 Slika 2: Blok šema povezivanja senzora i pogonskih jedinica
@@ -1152,7 +1156,7 @@
             Komponente zadužene za obradu podataka i upravljanje
           </p>
         </header>
-        <div class="modern-grid stagger-grid">
+        <div class="modern-grid">
           <article class="modern-card interactive animate-fade-up delay-1">
             <div class="card-content">
               <div class="card-top">
@@ -1401,7 +1405,7 @@
             Od učenja koncepta do praktičnih scenarija upotrebe
           </p>
         </header>
-        <div class="modern-grid stagger-grid">
+        <div class="modern-grid">
           <article
             class="modern-card interactive featured-card animate-fade-up delay-1"
           >
@@ -1466,6 +1470,7 @@
                 height="220"
                 decoding="async"
                 loading="lazy"
+                fetchpriority="low"
               />
             </div>
             <div class="gallery-info">
@@ -1482,6 +1487,7 @@
                 height="220"
                 decoding="async"
                 loading="lazy"
+                fetchpriority="low"
               />
             </div>
             <div class="gallery-info">
@@ -1498,6 +1504,7 @@
                 height="220"
                 decoding="async"
                 loading="lazy"
+                fetchpriority="low"
               />
             </div>
             <div class="gallery-info">
@@ -1514,6 +1521,7 @@
                 height="220"
                 decoding="async"
                 loading="lazy"
+                fetchpriority="low"
               />
             </div>
             <div class="gallery-info">
@@ -1530,6 +1538,7 @@
                 height="220"
                 decoding="async"
                 loading="lazy"
+                fetchpriority="low"
               />
             </div>
             <div class="gallery-info">
@@ -1546,6 +1555,7 @@
                 height="220"
                 decoding="async"
                 loading="lazy"
+                fetchpriority="low"
               />
             </div>
             <div class="gallery-info">
@@ -1740,6 +1750,7 @@
                 height="140"
                 decoding="async"
                 loading="lazy"
+                fetchpriority="low"
               />
             </div>
             <div class="qr-text">

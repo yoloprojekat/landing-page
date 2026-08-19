@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --- DOM Elements ---
   const htmlEl = document.documentElement;
   const bodyEl = document.body;
   const navbar = document.getElementById("navbar");
@@ -11,17 +10,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeIcon = document.getElementById("theme-icon");
   const logoBtn = document.getElementById("logo-btn");
 
-  // --- State ---
   let isMenuOpen = false;
   let currentTheme = htmlEl.getAttribute("data-theme") || "dark";
 
-  // --- Icons ---
   const iconSun =
     '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
   const iconMoon =
     '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
 
-  // --- Theme Logic ---
   function updateThemeIcon() {
     themeIcon.innerHTML = currentTheme === "dark" ? iconSun : iconMoon;
   }
@@ -29,14 +25,15 @@ document.addEventListener("DOMContentLoaded", () => {
   function toggleTheme() {
     currentTheme = currentTheme === "dark" ? "light" : "dark";
     htmlEl.setAttribute("data-theme", currentTheme);
-    localStorage.setItem("theme", currentTheme);
+    try {
+      localStorage.setItem("theme", currentTheme);
+    } catch (e) {}
     updateThemeIcon();
   }
 
   themeToggle.addEventListener("click", toggleTheme);
-  updateThemeIcon(); // Init icon on load
+  updateThemeIcon();
 
-  // --- Navigation Logic ---
   function openMenu() {
     isMenuOpen = true;
     navLinks.classList.add("open");
@@ -63,12 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Escape" && isMenuOpen) closeMenu();
   });
 
-  // Smooth Scroll routing
   logoBtn.addEventListener("click", () =>
     window.scrollTo({ top: 0, behavior: "smooth" }),
   );
 
-  // Event Delegation for Navigation Items (Prevents forced reflow & reduces memory overhead)
   navLinks.addEventListener("click", (e) => {
     const navItem = e.target.closest(".nav-item");
     if (!navItem) return;
@@ -77,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const targetEl = document.getElementById(targetId);
 
     if (targetEl) {
-      // Non-reflow geometry calculation using getBoundingClientRect
       const targetPosition =
         targetEl.getBoundingClientRect().top + window.scrollY - 90;
       window.scrollTo({ top: targetPosition, behavior: "smooth" });
@@ -86,7 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.innerWidth <= 1024) closeMenu();
   });
 
-  // --- Scroll Styling (Throttled & Non-blocking) ---
+  navbar.classList.toggle("scrolled", window.scrollY > 20);
+
   let ticking = false;
   window.addEventListener(
     "scroll",
@@ -102,25 +97,32 @@ document.addEventListener("DOMContentLoaded", () => {
     { passive: true },
   );
 
-  // --- Intersection Observer for Animations ---
+  const animated = document.querySelectorAll(
+    ".animate-fade-up, .animate-fade-left, .animate-fade-right",
+  );
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    animated.forEach((el) => el.classList.add("is-visible"));
+    return;
+  }
+
   const observer = new IntersectionObserver(
     (entries, obs) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("is-visible");
-          obs.unobserve(entry.target); // Memory efficiency: Stop tracking once revealed
+          obs.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.15, rootMargin: "50px" },
+    { threshold: 0, rootMargin: "80px 0px" },
   );
 
-  // Select all elements designated for animation
-  document
-    .querySelectorAll(
-      ".animate-fade-up, .animate-fade-left, .animate-fade-right",
-    )
-    .forEach((el) => {
+  animated.forEach((el) => {
+    if (el.getBoundingClientRect().top < window.innerHeight) {
+      el.classList.add("is-visible");
+    } else {
       observer.observe(el);
-    });
+    }
+  });
 });
