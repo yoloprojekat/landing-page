@@ -18,8 +18,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const iconMoon =
     '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
 
-  function updateThemeIcon() {
-    themeIcon.innerHTML = currentTheme === "dark" ? iconSun : iconMoon;
+  function updateThemeUI() {
+    if (themeIcon) {
+      themeIcon.innerHTML = currentTheme === "dark" ? iconSun : iconMoon;
+    }
+    if (themeToggle) {
+      themeToggle.setAttribute(
+        "aria-label",
+        currentTheme === "dark" ? "Switch to light theme" : "Switch to dark theme"
+      );
+    }
   }
 
   function toggleTheme() {
@@ -28,11 +36,13 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       localStorage.setItem("theme", currentTheme);
     } catch (e) {}
-    updateThemeIcon();
+    updateThemeUI();
   }
 
-  themeToggle.addEventListener("click", toggleTheme);
-  updateThemeIcon();
+  if (themeToggle) {
+    themeToggle.addEventListener("click", toggleTheme);
+    updateThemeUI();
+  }
 
   function openMenu() {
     isMenuOpen = true;
@@ -52,53 +62,59 @@ document.addEventListener("DOMContentLoaded", () => {
     bodyEl.style.overflow = "";
   }
 
-  mobileToggle.addEventListener("click", () =>
-    isMenuOpen ? closeMenu() : openMenu(),
-  );
-  menuOverlay.addEventListener("click", closeMenu);
+  if (mobileToggle) {
+    mobileToggle.addEventListener("click", () =>
+      isMenuOpen ? closeMenu() : openMenu()
+    );
+  }
+
+  if (menuOverlay) {
+    menuOverlay.addEventListener("click", closeMenu);
+  }
+
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && isMenuOpen) closeMenu();
-  });
-
-  logoBtn.addEventListener("click", () =>
-    window.scrollTo({ top: 0, behavior: "smooth" }),
-  );
-
-  navLinks.addEventListener("click", (e) => {
-    const navItem = e.target.closest(".nav-item");
-    if (!navItem) return;
-
-    const targetId = navItem.getAttribute("data-target");
-    const targetEl = document.getElementById(targetId);
-
-    if (targetEl) {
-      const targetPosition =
-        targetEl.getBoundingClientRect().top + window.scrollY - 90;
-      window.scrollTo({ top: targetPosition, behavior: "smooth" });
+    if (e.key === "Escape" && isMenuOpen) {
+      closeMenu();
     }
-
-    if (window.innerWidth <= 1024) closeMenu();
   });
 
-  navbar.classList.toggle("scrolled", window.scrollY > 20);
+  if (logoBtn) {
+    logoBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 
-  let ticking = false;
-  window.addEventListener(
-    "scroll",
-    () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          navbar.classList.toggle("scrolled", window.scrollY > 20);
-          ticking = false;
-        });
-        ticking = true;
+  if (navLinks) {
+    navLinks.addEventListener("click", (e) => {
+      const navItem = e.target.closest(".nav-item");
+      if (navItem && window.innerWidth <= 1024) {
+        closeMenu();
       }
-    },
-    { passive: true },
-  );
+    });
+  }
+
+  if (navbar) {
+    navbar.classList.toggle("scrolled", window.scrollY > 20);
+
+    let ticking = false;
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            navbar.classList.toggle("scrolled", window.scrollY > 20);
+            ticking = false;
+          });
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
+  }
 
   const animated = document.querySelectorAll(
-    ".animate-fade-up, .animate-fade-left, .animate-fade-right",
+    ".animate-fade-up, .animate-fade-left, .animate-fade-right"
   );
 
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -115,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    { threshold: 0, rootMargin: "80px 0px" },
+    { threshold: 0, rootMargin: "80px 0px" }
   );
 
   animated.forEach((el) => {

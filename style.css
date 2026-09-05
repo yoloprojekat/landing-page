@@ -53,6 +53,10 @@
 }
 
 /* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -76,6 +80,11 @@ body {
     sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
 }
 
 section {
@@ -183,6 +192,8 @@ section {
   transition: color 0.3s ease;
   position: relative;
   padding: 8px 0;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .nav-item:hover {
@@ -265,6 +276,7 @@ section {
   cursor: pointer;
   gap: 14px;
   padding: 0;
+  text-decoration: none;
 }
 
 .logo-ring {
@@ -596,6 +608,13 @@ section {
   padding: 20px;
 }
 
+.gallery-info p {
+  margin: 0;
+  color: var(--text-dim-high);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 /* Roadmap Component */
 .roadmap-timeline {
   position: relative;
@@ -673,6 +692,18 @@ section {
   letter-spacing: 1px;
 }
 
+.roadmap-card h3 {
+  margin: 10px 0;
+  color: var(--text-main);
+  font-size: 1.25rem;
+}
+
+.roadmap-card p {
+  color: var(--text-dim-high);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
 .roadmap-card ul {
   list-style: none;
   margin-top: 15px;
@@ -683,6 +714,7 @@ section {
   margin-bottom: 8px;
   font-size: 0.9rem;
   color: var(--text-dim);
+  line-height: 1.4;
 }
 
 /* Footer & QR Section */
@@ -817,6 +849,14 @@ section {
   transform: translate(0) !important;
 }
 
+/* Fallback for disabled / uninitialized JS */
+.no-js .animate-fade-up,
+.no-js .animate-fade-right,
+.no-js .animate-fade-left {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 /* Responsive Media Queries */
 @media (max-width: 1024px) {
   .mobile-toggle {
@@ -851,7 +891,7 @@ section {
   }
 
   .nav-list {
-    gap: 40px;
+    gap: 32px;
   }
 
   .nav-actions {

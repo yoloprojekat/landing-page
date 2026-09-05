@@ -1,68 +1,134 @@
 <div align="center">
 
-# 🌐 Pametno Vozilo - Centralni Hub Ekosistema
+# 🌐 Smart Vehicle — Autonomous Edge AI Platform
 
-### _Zvanična Prezentacija i Tehnička Dokumentacija celokupne mreže_
+### _Modular Robotics Ecosystem for Real-Time On-Device Computer Vision_
 
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![Cloudflare Pages](https://img.shields.io/badge/Deploy-Cloudflare_Pages-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://pages.cloudflare.com/)
-[![Docker](https://img.shields.io/badge/Infrastructure-Docker-2496ed?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![Edge Platform](https://img.shields.io/badge/Edge%20Device-Raspberry%20Pi%205-C51A4A?style=for-the-badge&logo=raspberrypi&logoColor=white)](https://www.raspberrypi.com/)
+[![Client Platform](https://img.shields.io/badge/Client-Android%20Platform-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://developer.android.com/)
+[![Language](https://img.shields.io/badge/Language-Kotlin%20%7C%20Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Container](https://img.shields.io/badge/Infrastructure-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![Vision](https://img.shields.io/badge/Vision-YOLO%20%7C%20ML%20Kit-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://github.com/yoloprojekat/model-pipeline)
+[![License: MIT](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)](LICENSE)
 
----
+<br>
 
 <p align="center">
-  <b>Pametno Vozilo</b> je modularni AI ekosistem baziran na Raspberry Pi 5 platformi. 
-  <br>Ovaj repozitorijum služi kao krovna dokumentacija i ulazna tačka za sve komponente sistema: od Edge AI obrade do višeplatformskih klijenata.
+  <b>Smart Vehicle (Pametno Vozilo)</b> is a modular, high-performance Edge AI robotics platform powered by the Raspberry Pi 5.
+  <br>It features on-device <b>YOLO</b> object detection, low-latency video streaming, self-healing network connectivity, and a dedicated <b>Android</b> client teleoperation suite.
 </p>
+
+🏆 **Awarded 4th Place Overall & Special Award for Outstanding Achievement** at the 10th Galaksija Cup National STEM Championship.
 
 </div>
 
-## 🏗️ Arhitektura Ekosistema
+---
 
-Projekat je podeljen na specijalizovane module radi lakšeg održavanja i skalabilnosti:
+## 🏗️ System Architecture
 
-### ⚙️ Core & Infrastruktura
-* **[rpi-server](https://github.com/yoloprojekat/rpi-server):** Glavni Dockerizovan Python backend. Upravlja hardverom, **YOLOv26** detekcijom i HTTP MJPEG strimovanjem.
-* **[smart-network](https://github.com/yoloprojekat/smart-network):** Osigurava 100% dostupnost vozila. Automatski konfiguriše hotspot u nedostatku eksterne mreže.
-* **[model-pipeline](https://github.com/yoloprojekat/model-pipeline):** Optimizovan proces konverzije YOLO modela u TFLite i ONNX formate za hardverski akcelerisanu inferencu.
+```mermaid
+graph TD
+    subgraph EdgeDevice ["Raspberry Pi 5 — Edge Infrastructure"]
+        CSI["PiCamera v2 (MIPI CSI-2)"] --> Vision["YOLO Inference Engine"]
+        Vision --> Streamer["Low-Latency MJPEG Streamer"]
+        NetworkDaemon["Smart Network Watchdog"] -.-> Hotspot["Automatic Fallback AP"]
+        Backend["rpi-server (Python 3.11 / Docker)"] --> MotorDriver["L298N Dual H-Bridge"]
+        MotorDriver --> Mecanum["Mecanum 4WD Omnidirectional Drive"]
+    end
 
-### 📱 Klijentska Rešenja (Live)
-* **[android-client](https://github.com/yoloprojekat/android-client):** Primarna kontrolna stanica građena u Jetpack Compose-u (Kotlin). OCR navigacija i telemetrija u realnom vremenu.
-* **[web-dashboard](https://github.com/yoloprojekat/web-dashboard):** Next.js & React kontrolna tabla za udaljeni monitoring putem Web-a.
-* **[python-desktop](https://github.com/yoloprojekat/python-desktop):** Napredna Python aplikacija za asinhronu kontrolu i AI analitiku.
+    subgraph ClientPlatform ["Client Platform — Native Android"]
+        AndroidApp["Android Teleoperation App (Jetpack Compose)"]
+        OCR["Google ML Kit Optical Character Recognition"]
+        AndroidApp --> OCR
+    end
 
-### 🏛️ Legacy Moduli (Arhiva)
-* **[rpi-server-legacy](https://github.com/yoloprojekat/rpi-server-legacy):** Rana verzija backenda zasnovana na Systemd servisima i WebSockets protokolu.
-* **[windows-client-legacy](https://github.com/yoloprojekat/windows-client-legacy)** Originalna WinUI 3 aplikacija sa ONNX Runtime integracijom.
-* **[linux-client](https://github.com/yoloprojekat/linux-client)** Native GTK4 klijent za Linux sisteme.
-* **[landing-page-legacy](https://github.com/yoloprojekat/landing-page-legacy)** Prethodna verzija sajta rađena u Svelte framework-u.
+    AndroidApp <==>|UDP Telemetry & Control Signals| Backend
+    Streamer ==>|HTTP Video Feed| AndroidApp
+```
 
 ---
 
-## 🛠 Tehnološki Stack
+## 📦 Ecosystem Repositories
 
-| Segment | Tehnologije |
+The project codebase is partitioned into specialized repositories for optimal edge maintainability and continuous integration:
+
+### ⚙️ Core & Infrastructure
+* **[rpi-server](https://github.com/yoloprojekat/rpi-server):** Primary containerized Python backend. Manages GPIO peripherals, executes **YOLO** real-time object detection inference, and distributes low-latency HTTP MJPEG video streams.
+* **[smart-network](https://github.com/yoloprojekat/smart-network):** Self-healing network service ensuring 100% vehicle uptime. Automatically spawns a localized fallback Hotspot whenever external Wi-Fi networks disconnect.
+* **[model-pipeline](https://github.com/yoloprojekat/model-pipeline):** Optimization and quantization pipeline (INT8/FP16) converting YOLO models to TFLite and ONNX formats for hardware-accelerated edge inference.
+
+### 📱 Client Platform
+* **[android-client](https://github.com/yoloprojekat/android-client):** The official teleoperation and monitoring station built exclusively for the **Android platform** using Jetpack Compose and Kotlin. Delivers real-time holonomic touch control, live telemetry HUD, low-latency FPV video streaming, and on-device **Google ML Kit OCR** for roadway sign reading.
+
+<details>
+<summary><b>🏛️ Archived Modules & Prototypes</b></summary>
+<br>
+
+* **[rpi-server-legacy](https://github.com/yoloprojekat/rpi-server-legacy):** Early monolithic backend prototype based on Linux Systemd daemons.
+* **[landing-page-legacy](https://github.com/yoloprojekat/landing-page-legacy):** Predecessor landing page built on the Svelte framework.
+
+</details>
+
+---
+
+## 🛠️ Technical Specifications
+
+### Hardware Platform
+| Component | Specification | Function |
+| :--- | :--- | :--- |
+| **SBC** | Raspberry Pi 5 (8GB LPDDR4X) | Central compute unit for vision inference & hardware control |
+| **Vision Sensor** | Raspberry Pi Camera Module v2 (8MP, Sony IMX219) | 30 FPS MIPI CSI-2 video acquisition |
+| **Drivetrain** | 4× DC Geared Motors with Mecanum Wheels | Full holonomic (omnidirectional) locomotion |
+| **Motor Driver** | L298N Dual H-Bridge Controller | Independent PWM direction and speed regulation |
+| **Power Management** | XL4015 Step-down DC-DC Buck Converter (5.1V, 5A) | Regulated, low-noise power delivery under peak CPU workloads |
+
+### Software & AI Stack
+| Layer | Technologies |
 | :--- | :--- |
-| **Edge AI** | **YOLOv26**, ONNX Runtime, TFLite, OpenCV |
-| **Backend** | Python 3.11, Docker, FastAPI, UDP Sockets |
-| **Frontend** | Vanilla JS (Main Site), Next.js, Jetpack Compose |
-| **Hardware** | Raspberry Pi 5, L298N, PiCamera v2 |
+| **Edge AI & Vision** | **YOLO**, Google ML Kit OCR, ONNX Runtime, TensorFlow Lite, OpenCV |
+| **Edge Backend** | Python 3.11, Docker & Docker Compose, FastAPI, Asyncio, UDP/TCP Sockets |
+| **Client Platform** | Native **Android Platform** (Android 15+ SDK, Kotlin, Jetpack Compose, Coroutines) |
+| **Web Presentation** | Semantic HTML5, Vanilla CSS, Vanilla JavaScript (Zero Dependencies) |
 
 ---
 
-## 🚀 Brzi Start za Programere
+## 🚀 Quick Start Guide
 
-Ovaj projekat promoviše **Zero-Dependency** pristup za klijente i **Docker-First** pristup za server.
+### 1. Android Client Setup
+1. Clone the [android-client](https://github.com/yoloprojekat/android-client) repository.
+2. Open the project in **Android Studio** (Android 15 SDK / Ladybug+ recommended).
+3. Connect your Android device via USB debugging and deploy the application (`Run > Run 'app'`).
 
-1.  **Za Veb:** Samo otvorite `index.html` u `landing-page` repozitorijumu (nema `npm install`).
-2.  **Za Server:** Pokrenite `docker-compose up` unutar `rpi-server` modula na vašem Pi 5 uređaju.
-3.  **Za Android:** Importujte `android-client` u Android Studio (zahteva Android 15 SDK i 16KB page alignment podršku).
+### 2. Edge Server Deployment (Raspberry Pi 5)
+1. SSH into your Raspberry Pi 5.
+2. Clone [rpi-server](https://github.com/yoloprojekat/rpi-server):
+   ```bash
+   git clone https://github.com/yoloprojekat/rpi-server.git
+   cd rpi-server
+   docker compose up -d
+   ```
+3. The server will initialize video streaming and listen for Android client commands.
+
+### 3. Web Presentation Layer (Landing Page)
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yoloprojekat/landing-page.git
+   ```
+2. Open `index.html` directly in any modern browser (zero build steps, zero dependencies).
+
+---
+
+## 🏆 Awards & Competition Recognition
+
+- **4th Place Overall**: 10th Galaksija Cup National STEM Championship.
+- **Special Award for Outstanding Achievement**: Conferred by the Association of Electrical Engineering Schools of Serbia (ZETŠS) and the Nordeus Foundation for innovative Edge AI engineering, real-time inference latency, and microservice containerization.
 
 ---
 
 <div align="center">
 
-**Autor:** Danilo Stoletović • **Mentor:** Dejan Batanjac  
+**Author:** Danilo Stoletović  
+**Mentor:** Predrag Šubarević • **Former Mentor:** Dejan Batanjac  
 **ETŠ „Nikola Tesla“ Niš • 2026**
 
 </div>

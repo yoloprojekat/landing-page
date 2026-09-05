@@ -1,21 +1,45 @@
 <!doctype html>
-<html lang="sr" data-theme="dark">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#030712" />
-    <title>Pametno Vozilo | Autonomna Edge AI Platforma</title>
+    <title>Smart Vehicle | Autonomous Edge AI Platform</title>
     <meta
       name="description"
-      content="Edukativna platforma i otvoreni sistem za razvoj Edge AI rešenja..."
+      content="Open-source educational platform for Edge AI and computer vision research powered by Raspberry Pi 5. Awarded 4th place and Special Award at the 10th Galaksija Cup."
     />
     <meta
       name="keywords"
-      content="Pametno Vozilo, YOLO, Raspberry Pi 5, Edge AI, Robotika"
+      content="Smart Vehicle, Edge AI, Raspberry Pi 5, YOLO, Computer Vision, Autonomous Robotics, Docker, Open Source, STEM"
     />
+    <meta name="author" content="Danilo Stoletović" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yoloprojekat.com/" />
+    <meta property="og:title" content="Smart Vehicle | Autonomous Edge AI Platform" />
+    <meta
+      property="og:description"
+      content="Open-source educational platform for Edge AI and computer vision research powered by Raspberry Pi 5."
+    />
+    <meta property="og:image" content="https://yoloprojekat.com/assets/nagrada.avif" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://yoloprojekat.com/" />
+    <meta name="twitter:title" content="Smart Vehicle | Autonomous Edge AI Platform" />
+    <meta
+      name="twitter:description"
+      content="Open-source educational platform for Edge AI and computer vision research powered by Raspberry Pi 5."
+    />
+    <meta name="twitter:image" content="https://yoloprojekat.com/assets/nagrada.avif" />
 
     <link rel="canonical" href="https://yoloprojekat.com/" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+    <!-- Local Font Preload -->
     <link
       rel="preload"
       href="assets/fonts/plus-jakarta-sans-latin.woff2"
@@ -24,829 +48,20 @@
       crossorigin
       fetchpriority="high"
     />
-    <link
-      rel="preload"
-      href="assets/nagrada.avif"
-      as="image"
-      type="image/avif"
-      media="(min-width: 900px)"
-      fetchpriority="high"
-    />
-    <style>
-      @font-face {
-        font-family: "Plus Jakarta Sans";
-        font-style: normal;
-        font-weight: 400 900;
-        font-display: swap;
-        src: url("assets/fonts/plus-jakarta-sans-latin-ext.woff2")
-          format("woff2");
-        unicode-range:
-          U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
-          U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
-          U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-      }
-      @font-face {
-        font-family: "Plus Jakarta Sans";
-        font-style: normal;
-        font-weight: 400 900;
-        font-display: swap;
-        src: url("assets/fonts/plus-jakarta-sans-latin.woff2") format("woff2");
-        unicode-range:
-          U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
-          U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
-          U+2212, U+2215, U+FEFF, U+FFFD;
-      }
-      :root {
-        --bg: #fdfdfe;
-        --text-main: #0f172a;
-        --text-dim: #475569;
-        --text-dim-high: #334155;
-        --primary: #0271ad;
-        --primary-high: #004d87;
-        --glass-bg: rgba(255, 255, 255, 0.75);
-        --glass-border: rgba(15, 23, 42, 0.08);
-        --card-bg-glass: rgba(255, 255, 255, 0.95);
-        --border: rgba(15, 23, 42, 0.15);
-        --nav-pad: 24px;
-        color-scheme: light;
-      }
-      :root[data-theme="dark"] {
-        --bg: #030712;
-        --text-main: #f8fafc;
-        --text-dim: #94a3b8;
-        --text-dim-high: #cbd5e1;
-        --primary: #38bdf8;
-        --primary-high: #7dd3fc;
-        --glass-bg: rgba(3, 7, 18, 0.75);
-        --glass-border: rgba(255, 255, 255, 0.08);
-        --card-bg-glass: rgba(15, 23, 42, 0.85);
-        --border: rgba(255, 255, 255, 0.1);
-        color-scheme: dark;
-      }
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        margin: 0;
-        background-color: var(--bg);
-        color: var(--text-main);
-        font-family:
-          "Plus Jakarta Sans",
-          system-ui,
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          Roboto,
-          Oxygen,
-          Ubuntu,
-          Cantarell,
-          "Open Sans",
-          "Helvetica Neue",
-          sans-serif;
-        overflow-x: hidden;
-        -webkit-font-smoothing: antialiased;
-      }
-      section {
-        scroll-margin-top: 100px;
-      }
-      .section-container {
-        max-width: 1200px;
-        margin: 120px auto;
-        padding: 0 24px;
-        contain: layout;
-      }
-      .section-header {
-        text-align: center;
-        margin-bottom: 60px;
-      }
-      .section-title {
-        font-size: clamp(2rem, 5vw, 2.8rem);
-        color: var(--text-main);
-        margin-bottom: 12px;
-        font-weight: 800;
-      }
-      .section-subtitle {
-        color: var(--text-dim-high);
-        font-size: 1.1rem;
-      }
-      .specs-card,
-      .image-container,
-      .modern-card,
-      .gallery-card,
-      .roadmap-card,
-      .qr-wrapper {
-        background: var(--card-bg-glass);
-        border: 1px solid var(--border);
-        border-radius: 24px;
-      }
-      .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        padding: var(--nav-pad) 0;
-        transition:
-          padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-          background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-          border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      .navbar.scrolled {
-        padding: 12px 0;
-        background: var(--glass-bg);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-bottom: 1px solid var(--glass-border);
-      }
-      .nav-container {
-        max-width: 1300px;
-        margin: 0 auto;
-        padding: 0 32px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .nav-links,
-      .nav-actions,
-      .nav-list {
-        display: flex;
-        align-items: center;
-      }
-      .nav-links {
-        gap: 48px;
-      }
-      .nav-list {
-        gap: 32px;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      .nav-actions {
-        gap: 16px;
-      }
-      .nav-item {
-        background: none;
-        border: none;
-        color: var(--text-dim);
-        font-weight: 700;
-        font-size: 0.8rem;
-        letter-spacing: 0.5px;
-        cursor: pointer;
-        transition: color 0.3s ease;
-        position: relative;
-        padding: 8px 0;
-      }
-      .nav-item:hover {
-        color: var(--primary);
-      }
-      .nav-item::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: var(--primary);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.3s ease;
-      }
-      .nav-item:hover::after {
-        transform: scaleX(1);
-      }
-      .theme-toggle,
-      .mobile-toggle {
-        background: var(--glass-bg);
-        border: 1px solid var(--glass-border);
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition:
-          transform 0.3s ease,
-          background-color 0.3s ease,
-          color 0.3s ease,
-          border-color 0.3s ease;
-      }
-      .theme-toggle {
-        color: var(--text-main);
-        padding: 10px;
-        border-radius: 12px;
-      }
-      .theme-toggle:hover {
-        background: var(--primary);
-        color: #fff;
-        transform: rotate(15deg);
-      }
-      .github-cta {
-        background: var(--text-main);
-        color: var(--bg);
-        padding: 10px 20px;
-        border-radius: 12px;
-        text-decoration: none;
-        font-weight: 800;
-        font-size: 0.75rem;
-        transition:
-          transform 0.3s ease,
-          box-shadow 0.3s ease,
-          background-color 0.3s ease;
-      }
-      .github-cta:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 20px -10px var(--primary);
-      }
-      .logo,
-      .logo-container {
-        display: flex;
-        align-items: center;
-      }
-      .logo {
-        background: none;
-        border: none;
-        cursor: pointer;
-        gap: 14px;
-        padding: 0;
-      }
-      .logo-ring {
-        width: 36px;
-        height: 36px;
-        border: 3.5px solid var(--primary);
-        border-radius: 12px;
-        transform: rotate(45deg);
-        transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-      }
-      .logo:hover .logo-ring {
-        transform: rotate(225deg);
-      }
-      .logo-main {
-        font-weight: 800;
-        font-size: 1.4rem;
-        color: var(--text-main);
-        display: block;
-        line-height: 1;
-      }
-      .logo-sub {
-        color: var(--primary);
-        font-size: 0.65rem;
-        letter-spacing: 3px;
-        font-weight: 800;
-        display: block;
-        margin-top: 4px;
-      }
-      .logo-container {
-        margin-bottom: 2rem;
-        flex-direction: column;
-      }
-      .logo-container .logo-main {
-        font-size: 3rem;
-        letter-spacing: -1px;
-      }
-      .logo-container .logo-sub {
-        background-color: #1e293b;
-        color: #ffffff;
-        padding: 2px 10px;
-        font-size: 0.85rem;
-        border-radius: 4px;
-      }
-      .mobile-toggle {
-        display: none;
-        padding: 12px;
-        border-radius: 14px;
-        z-index: 1001;
-      }
-      .hamburger {
-        width: 28px;
-        height: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-      .hamburger span {
-        display: block;
-        width: 100%;
-        height: 3px;
-        background: var(--primary);
-        border-radius: 10px;
-        transition:
-          transform 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6),
-          opacity 0.3s ease;
-      }
-      .hamburger.active .line-top {
-        transform: translateY(8.5px) rotate(45deg);
-      }
-      .hamburger.active .line-mid {
-        opacity: 0;
-        transform: translateX(20px);
-      }
-      .hamburger.active .line-bot {
-        transform: translateY(-8.5px) rotate(-45deg);
-      }
-      .menu-overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        z-index: 998;
-        border: none;
-      }
-      .menu-overlay[hidden] {
-        display: none;
-      }
-      .hero {
-        min-height: 80vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        opacity: 1 !important;
-        transform: none !important;
-      }
-      .gradient-text {
-        font-size: clamp(2.5rem, 8vw, 5rem);
-        font-weight: 900;
-        line-height: 1.1;
-        margin-bottom: 24px;
-        background: linear-gradient(
-          135deg,
-          var(--text-main) 30%,
-          var(--primary-high) 100%
-        );
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .hero-desc {
-        color: var(--text-dim-high);
-        font-size: clamp(1.1rem, 2vw, 1.3rem);
-        max-width: 800px;
-        margin: 0 auto 40px;
-      }
-      .badges {
-        display: flex;
-        gap: 12px;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-      .high-contrast-badge,
-      .high-badge-outline {
-        padding: 8px 18px;
-        border-radius: 50px;
-        font-size: 0.85rem;
-        font-weight: 700;
-      }
-      .high-contrast-badge {
-        background: var(--primary-high);
-        color: #ffffff;
-      }
-      .high-badge-outline {
-        border: 2px solid var(--primary-high);
-        color: var(--primary-high);
-        padding: 6px 16px;
-      }
-      .tech-pill-high {
-        background: rgba(1, 87, 155, 0.05);
-        color: var(--primary-high);
-        padding: 6px 14px;
-        border-radius: 8px;
-        font-size: 0.75rem;
-        font-weight: 800;
-        border: 1.5px solid var(--primary-high);
-      }
-      .tech-pill-high.primary-pill {
-        background: var(--primary-high);
-        color: #ffffff;
-        border: none;
-      }
-      .presentation-grid {
-        display: grid;
-        grid-template-columns: 1.2fr 1fr;
-        gap: 40px;
-        align-items: start;
-      }
-      .image-container {
-        padding: 20px;
-      }
-      .img-wrapper {
-        border-radius: 16px;
-        overflow: hidden;
-        margin: 0;
-        background: #f1f5f9;
-        display: flex;
-        flex-direction: column;
-      }
-      .hardware-img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16/10;
-        object-fit: cover;
-      }
-      .caption {
-        padding: 15px;
-        color: var(--text-dim-high);
-        text-align: center;
-        font-size: 0.9rem;
-        font-weight: 600;
-        border-top: 1px solid var(--border);
-      }
-      .specs-card {
-        padding: 40px;
-      }
-      .text-primary-high {
-        color: var(--primary-high);
-        font-size: 1.15rem;
-        display: block;
-        margin-bottom: 5px;
-        font-weight: 800;
-      }
-      .spec-item p {
-        color: var(--text-dim-high);
-        margin-bottom: 25px;
-        line-height: 1.6;
-      }
-      .modern-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 24px;
-      }
-      .modern-card-link {
-        text-decoration: none;
-        color: inherit;
-        display: block;
-      }
-      .modern-card {
-        transition:
-          transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-          border-color 0.35s ease,
-          box-shadow 0.35s ease;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-      }
-      .modern-card.featured-card {
-        border: 2px solid var(--primary-high);
-      }
-      .interactive:hover {
-        transform: translateY(-8px);
-        border-color: var(--primary-high);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-      }
-      .card-content {
-        padding: 32px;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-      }
-      .card-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-      }
-      .modern-icon {
-        font-size: 1.8rem;
-      }
-      .modern-card h3 {
-        color: var(--text-main);
-        margin: 10px 0;
-        font-size: 1.4rem;
-        font-weight: 700;
-      }
-      .modern-card p {
-        color: var(--text-dim-high);
-        line-height: 1.6;
-        font-size: 0.95rem;
-        margin-bottom: 20px;
-      }
-      .card-footer-high {
-        margin-top: auto;
-        color: var(--primary-high);
-        font-weight: 800;
-        font-size: 0.9rem;
-      }
-      .gallery-card {
-        overflow: hidden;
-        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      }
-      .gallery-card:hover {
-        transform: translateY(-10px);
-      }
-      .gallery-img-container {
-        width: 100%;
-        height: 220px;
-      }
-      .gallery-img-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: scale-down;
-      }
-      .gallery-info {
-        padding: 20px;
-      }
-      .roadmap-timeline {
-        position: relative;
-        max-width: 900px;
-        margin: 40px auto;
-        padding: 20px 0;
-      }
-      .roadmap-timeline::before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 0;
-        width: 2px;
-        height: 100%;
-        background: linear-gradient(
-          to bottom,
-          transparent,
-          var(--primary),
-          transparent
-        );
-        transform: translateX(-50%);
-      }
-      .roadmap-item {
-        position: relative;
-        width: 50%;
-        padding: 20px 40px;
-        margin-bottom: 20px;
-      }
-      .roadmap-item:nth-child(odd) {
-        left: 0;
-        text-align: right;
-      }
-      .roadmap-item:nth-child(even) {
-        left: 50%;
-        text-align: left;
-      }
-      .roadmap-dot {
-        position: absolute;
-        top: 45px;
-        width: 16px;
-        height: 16px;
-        background: var(--bg);
-        border: 3px solid var(--primary);
-        border-radius: 50%;
-        z-index: 10;
-      }
-      .roadmap-item:nth-child(odd) .roadmap-dot {
-        right: -8px;
-      }
-      .roadmap-item:nth-child(even) .roadmap-dot {
-        left: -8px;
-      }
-      .roadmap-card {
-        padding: 24px;
-      }
-      .roadmap-item.active .roadmap-card {
-        border-color: var(--primary);
-        box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
-      }
-      .phase-tag {
-        color: var(--primary);
-        font-size: 0.75rem;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-      .roadmap-card ul {
-        list-style: none;
-        margin-top: 15px;
-        padding: 0;
-      }
-      .roadmap-card li {
-        margin-bottom: 8px;
-        font-size: 0.9rem;
-        color: var(--text-dim);
-      }
-      .footer {
-        margin-top: 80px;
-        padding-bottom: 40px;
-      }
-      .footer-grid {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        gap: 40px;
-        padding-top: 40px;
-        border-top: 1px solid var(--border);
-      }
-      .footer-left .logo-text {
-        margin-bottom: 15px;
-      }
-      .footer-credits p {
-        margin-bottom: 6px;
-        font-size: 0.95rem;
-        color: var(--text-main);
-      }
-      .special-thanks {
-        font-size: 0.85rem;
-        color: var(--text-dim);
-        margin-top: 10px;
-        border-left: 2px solid var(--primary);
-        padding-left: 10px;
-      }
-      .school-info {
-        margin-top: 15px;
-        font-weight: 600;
-        color: var(--primary);
-      }
-      .qr-wrapper {
-        display: flex;
-        align-items: center;
-        gap: 25px;
-        padding: 20px 25px;
-        border-radius: 28px;
-        transition:
-          transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-          border-color 0.3s ease,
-          box-shadow 0.3s ease;
-      }
-      .qr-wrapper:hover {
-        border-color: var(--primary);
-        transform: translateY(-5px) scale(1.02);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-      }
-      .qr-container {
-        width: 140px;
-        height: 140px;
-        background: #ffffff;
-        padding: 10px;
-        border-radius: 14px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-      .qr-img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-      .qr-text {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-      }
-      .qr-label {
-        font-weight: 800;
-        color: var(--text-main);
-        font-size: 1.1rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-      .animate-fade-up,
-      .animate-fade-right,
-      .animate-fade-left {
-        opacity: 0;
-      }
-      .animate-fade-up {
-        transform: translateY(30px);
-        transition:
-          opacity 0.8s ease-out,
-          transform 0.8s ease-out;
-      }
-      .animate-fade-right {
-        transform: translateX(-30px);
-        transition:
-          opacity 1s ease-out,
-          transform 1s ease-out;
-      }
-      .animate-fade-left {
-        transform: translateX(30px);
-        transition:
-          opacity 1s ease-out,
-          transform 1s ease-out;
-      }
-      .delay-1 {
-        transition-delay: 100ms;
-      }
-      .delay-2 {
-        transition-delay: 200ms;
-      }
-      .delay-3 {
-        transition-delay: 300ms;
-      }
-      .is-visible {
-        opacity: 1 !important;
-        transform: translate(0) !important;
-      }
-      @media (max-width: 1024px) {
-        .mobile-toggle {
-          display: flex;
-        }
-        .nav-links {
-          position: fixed;
-          top: 0;
-          right: -100%;
-          width: 100%;
-          max-width: 300px;
-          height: 100vh;
-          background: var(--bg);
-          flex-direction: column;
-          justify-content: center;
-          padding: 40px;
-          transition: right 0.5s ease;
-          border-left: 1px solid var(--glass-border);
-          visibility: hidden;
-        }
-        .nav-links.open {
-          right: 0;
-          visibility: visible;
-        }
-        .nav-list,
-        .nav-actions {
-          flex-direction: column;
-          width: 100%;
-        }
-        .nav-list {
-          gap: 40px;
-        }
-        .nav-actions {
-          gap: 20px;
-        }
-      }
-      @media (max-width: 900px) {
-        .presentation-grid {
-          grid-template-columns: 1fr;
-        }
-        .section-container {
-          margin: 80px auto;
-        }
-      }
-      @media (max-width: 768px) {
-        .roadmap-timeline::before {
-          left: 20px;
-        }
-        .roadmap-item {
-          width: 100%;
-          left: 0 !important;
-          text-align: left !important;
-          padding-left: 50px;
-        }
-        .roadmap-dot {
-          left: 12px !important;
-        }
-        .footer-grid {
-          flex-direction: column;
-          text-align: center;
-          align-items: center;
-          gap: 50px;
-        }
-        .footer-left,
-        .footer-credits {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          width: 100%;
-        }
-        .special-thanks {
-          border-left: none;
-          border-top: 2px solid var(--primary);
-          padding-left: 0;
-          padding-top: 15px;
-          margin-top: 15px;
-          display: inline-block;
-          max-width: 280px;
-        }
-        .qr-wrapper {
-          flex-direction: column;
-          text-align: center;
-          align-items: center;
-          padding: 30px;
-          width: 100%;
-          max-width: 320px;
-        }
-        .qr-container {
-          width: 180px;
-          height: 180px;
-          margin-bottom: 15px;
-        }
-        .qr-text {
-          align-items: center;
-        }
-      }
-      @media (prefers-reduced-motion: reduce) {
-        .animate-fade-up,
-        .animate-fade-right,
-        .animate-fade-left,
-        .navbar,
-        .modern-card,
-        .gallery-card,
-        .qr-wrapper,
-        .nav-item::after,
-        .logo-ring,
-        .hamburger span {
-          transition: none;
-        }
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.min.css" />
+
+    <noscript>
+      <style>
         .animate-fade-up,
         .animate-fade-right,
         .animate-fade-left {
-          opacity: 1;
-          transform: none;
+          opacity: 1 !important;
+          transform: none !important;
         }
-      }
-    </style>
+      </style>
+    </noscript>
 
     <!-- Anti-flicker Theme Script -->
     <script>
@@ -861,53 +76,74 @@
       })();
     </script>
     <script src="script.min.js" defer></script>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Smart Vehicle: Autonomous Edge AI Platform on Raspberry Pi 5",
+        "description": "An open-source educational platform for Edge AI and computer vision research powered by Raspberry Pi 5, featuring YOLO detection, Docker microservices, and Mecanum drive.",
+        "author": {
+          "@type": "Person",
+          "name": "Danilo Stoletović"
+        },
+        "publisher": {
+          "@type": "EducationalOrganization",
+          "name": "ETŠ Nikola Tesla Niš"
+        },
+        "url": "https://yoloprojekat.com/",
+        "image": "https://yoloprojekat.com/assets/nagrada.avif"
+      }
+    </script>
   </head>
 
   <body>
     <div
       id="menu-overlay"
       class="menu-overlay"
-      aria-label="Zatvori meni"
+      aria-label="Close menu"
       hidden
     ></div>
 
     <header id="navbar" class="navbar">
       <div class="nav-container">
-        <button class="logo" id="logo-btn" aria-label="Povratak na vrh">
+        <a href="#hero" class="logo" id="logo-btn" aria-label="Return to top">
           <span class="logo-ring"></span>
           <span class="logo-text">
-            <span class="logo-main">PAMETNO</span>
-            <span class="logo-sub">VOZILO</span>
+            <span class="logo-main">SMART</span>
+            <span class="logo-sub">VEHICLE</span>
           </span>
-        </button>
+        </a>
 
-        <nav class="nav-links" id="main-nav">
+        <nav class="nav-links" id="main-nav" aria-label="Main Navigation">
           <ul class="nav-list">
             <li>
-              <button class="nav-item" data-target="intro">Pregled</button>
+              <a href="#intro" class="nav-item">Overview</a>
             </li>
             <li>
-              <button class="nav-item" data-target="awards">Priznanja</button>
+              <a href="#awards" class="nav-item">Awards</a>
             </li>
             <li>
-              <button class="nav-item" data-target="hardware">Hardver</button>
+              <a href="#hardware" class="nav-item">Hardware</a>
             </li>
             <li>
-              <button class="nav-item" data-target="software-logic">
-                Softver
-              </button>
+              <a href="#software-logic" class="nav-item">Software</a>
             </li>
             <li>
-              <button class="nav-item" data-target="projects">Ekosistem</button>
+              <a href="#projects" class="nav-item">Ecosystem</a>
             </li>
             <li>
-              <button class="nav-item" data-target="use-cases">Primena</button>
+              <a href="#use-cases" class="nav-item">Applications</a>
             </li>
             <li>
-              <button class="nav-item" data-target="gallery">Galerija</button>
+              <a href="#gallery" class="nav-item">Gallery</a>
             </li>
             <li>
-              <button class="nav-item" data-target="roadmap">Razvoj</button>
+              <a href="#roadmap" class="nav-item">Roadmap</a>
+            </li>
+            <li>
+              <a href="#comparison" class="nav-item">Comparison</a>
             </li>
           </ul>
 
@@ -915,7 +151,7 @@
             <button
               id="theme-toggle"
               class="theme-toggle"
-              aria-label="Promeni temu"
+              aria-label="Toggle theme"
             >
               <svg
                 id="theme-icon"
@@ -942,7 +178,7 @@
         <button
           id="mobile-toggle"
           class="mobile-toggle"
-          aria-label="Meni"
+          aria-label="Toggle navigation menu"
           aria-expanded="false"
           aria-controls="main-nav"
         >
@@ -959,31 +195,30 @@
       <section id="hero" class="hero section-container">
         <div class="hero-content">
           <div class="logo-container" aria-hidden="true">
-            <span class="logo-main">PAMETNO</span>
-            <span class="logo-sub">VOZILO</span>
+            <span class="logo-main">SMART</span>
+            <span class="logo-sub">VEHICLE</span>
           </div>
-          <h1 class="gradient-text">Autonomno Edge AI Vozilo</h1>
+          <h1 class="gradient-text">Autonomous Edge AI Vehicle</h1>
           <p class="hero-desc">
-            Otvorena hardverska i softverska platforma za praktičnu primenu i
-            istraživanje Edge AI računarske vizije na Raspberry Pi 5
-            arhitekturi.
+            An open-source hardware and software platform for the practical deployment
+            and research of on-device Edge AI computer vision on Raspberry Pi 5 architecture.
           </p>
           <div class="badges">
             <span class="high-contrast-badge"
-              >🏆 4. Mesto & Specijalna Nagrada — 10. Galaksija Kup</span
+              >🏆 4th Place & Special Award — 10th Galaksija Cup</span
             >
-            <span class="high-badge-outline">Edukativna Platforma</span>
+            <span class="high-badge-outline">Educational Platform</span>
             <span class="high-badge-outline">YOLO & ML OCR</span>
-            <span class="high-badge-outline">Docker Ekosistem</span>
+            <span class="high-badge-outline">Docker Ecosystem</span>
           </div>
         </div>
       </section>
 
       <section id="awards" class="section-container">
         <header class="section-header animate-fade-up">
-          <h2 class="section-title">Priznanja i Uspeh na Takmičenju</h2>
+          <h2 class="section-title">Competition Success & Recognition</h2>
           <p class="section-subtitle">
-            Nacionalno takmičenje u inovativnim STEM projektima
+            National STEM and robotics innovation championship
           </p>
         </header>
 
@@ -992,7 +227,7 @@
             <figure class="img-wrapper">
               <img
                 src="assets/nagrada.avif"
-                alt="Priznanje i diplome sa 10. Galaksija kupa"
+                alt="Awards and certificates from the 10th Galaksija Cup"
                 class="hardware-img"
                 width="1000"
                 height="707"
@@ -1001,35 +236,31 @@
                 sizes="(max-width: 900px) calc(100vw - 88px), min(640px, 52vw)"
               />
               <figcaption class="caption">
-                Slika 1: Priznanje za osvojeno 4. mesto i Specijalnu nagradu na
-                10. Galaksija kupu
+                Figure 1: 4th Place Certificate and Special Award for Outstanding Achievement at the 10th Galaksija Cup
               </figcaption>
             </figure>
           </div>
           <div class="specs-card animate-fade-left">
             <article class="spec-item">
-              <strong class="text-primary-high">O 10. Galaksija Kupu</strong>
+              <strong class="text-primary-high">About the 10th Galaksija Cup</strong>
               <p>
-                Galaksija kup je najveće zvanično nacionalno takmičenje učenika
-                elektrotehničkih škola u Srbiji u oblasti robotike, elektronike
-                i softverskih inovacija, koje organizuju Zajednica
-                elektrotehničkih škola Srbije (ZETŠS) i Nordeus fondacija.
-                Jubilarni, 10. ciklus okupio je najbolje STEM projekte
-                srednjoškolaca širom zemlje.
+                The Galaksija Cup is Serbia's premier national competition for electrical
+                engineering and computer science students in robotics, electronics, and software
+                innovation, organized by the Association of Electrical Engineering Schools of
+                Serbia (ZETŠS) and the Nordeus Foundation. Its jubilee 10th edition gathered
+                the top secondary school STEM finalists nationwide.
               </p>
             </article>
             <article class="spec-item">
               <strong class="text-primary-high"
-                >Osvojeno 4. Mesto i Specijalna Nagrada</strong
+                >4th Place & Special Award Won</strong
               >
               <p>
-                Projekat <strong>Pametno Vozilo</strong> osvojio je
-                <strong>4. mesto</strong> u ukupnom plasmanu u jakoj
-                konkurenciji finalista iz cele Srbije, kao i
-                <strong>Specijalnu nagradu za zapaženi rezultat</strong>.
-                Posebno su istaknuti modularni softverski sloj, primena Edge AI
-                inferencije u realnom vremenu i napredna kontejnerizacija
-                sistema.
+                The <strong>Smart Vehicle</strong> project earned <strong>4th place overall</strong>
+                in a competitive field of national finalists, accompanied by a
+                <strong>Special Award for Outstanding Achievement</strong>. The evaluation jury
+                specifically recognized the decoupled modular architecture, real-time on-device
+                Edge AI inference, and containerized deployment.
               </p>
             </article>
           </div>
@@ -1038,9 +269,9 @@
 
       <section id="intro" class="section-container">
         <header class="section-header animate-fade-up">
-          <h2 class="section-title">Motivacija i Koncept</h2>
+          <h2 class="section-title">Motivation & Concept</h2>
           <p class="section-subtitle">
-            Povezivanje teorijskih osnova sa realnim inženjerskim izazovima
+            Bridging theoretical foundations with real-world engineering challenges
           </p>
         </header>
         <div class="modern-grid">
@@ -1048,15 +279,14 @@
             <div class="card-content">
               <div class="card-top">
                 <span class="modern-icon" aria-hidden="true">🎯</span>
-                <span class="tech-pill-high">Izazov</span>
+                <span class="tech-pill-high">Challenge</span>
               </div>
-              <h3>Praktični Jaz u Nastavi</h3>
+              <h3>The Educational Gap</h3>
               <p>
-                Tradicionalno obrazovanje u oblasti računarskih nauka često
-                ostaje usmereno na teoriju i izolovane algoritme. Nedostaje rad
-                na opipljivom hardveru gde se studenti i učenici susreću sa
-                realnim promenljivim uslovima, kašnjenjem signala i ograničenim
-                resursima.
+                Traditional computer science education frequently emphasizes theoretical
+                algorithms in isolated software sandboxes. Students often miss hands-on exposure
+                to physical hardware where they must manage dynamic real-world variability,
+                signal latency, and constrained memory budgets.
               </p>
             </div>
           </article>
@@ -1067,14 +297,14 @@
             <div class="card-content">
               <div class="card-top">
                 <span class="modern-icon" aria-hidden="true">⚙️</span>
-                <span class="tech-pill-high primary-pill">Pristup</span>
+                <span class="tech-pill-high primary-pill">Approach</span>
               </div>
-              <h3>Cilj Projekta</h3>
+              <h3>Project Mission</h3>
               <p>
-                Pametno Vozilo pruža integrisano okruženje za rad sa modelima
-                detekcije objekata i prepoznavanja teksta u realnom vremenu.
-                Sistem uklanja prepreke pri podešavanju okruženja i omogućava
-                direktan rad na kontroli vozila i obradi podataka.
+                Smart Vehicle provides a production-grade playground for real-time computer
+                vision and optical character recognition. By eliminating tedious driver and
+                dependency configuration hurdles, it enables direct exploration of robotics
+                motor control, data pipelines, and telemetry.
               </p>
             </div>
           </article>
@@ -1083,14 +313,14 @@
             <div class="card-content">
               <div class="card-top">
                 <span class="modern-icon" aria-hidden="true">🛠️</span>
-                <span class="tech-pill-high">Inženjering</span>
+                <span class="tech-pill-high">Engineering</span>
               </div>
-              <h3>Arhitektonski Izazovi</h3>
+              <h3>Architectural Solutions</h3>
               <p>
-                Tokom razvoja, spajanje sinhronih procesa obrade slike i
-                upravljanja motorima dovodilo je do zastoja u radu. Problem je
-                rešen prelaskom na izolovane Docker kontejnere, višenitnu obradu
-                i kreiranjem skripte za automatsko obnavljanje mrežne veze.
+                During early development, coupling synchronous computer vision loops with
+                motor drivers caused blocking and latency spikes. This was resolved by
+                adopting decoupled Docker microservices, multithreaded pipelines, and an
+                automated watchdog script for self-healing network connectivity.
               </p>
             </div>
           </article>
@@ -1099,9 +329,9 @@
 
       <section id="hardware" class="section-container">
         <header class="section-header animate-fade-up">
-          <h2 class="section-title">Hardverska Arhitektura</h2>
+          <h2 class="section-title">Hardware Architecture</h2>
           <p class="section-subtitle">
-            Pregled ključnih komponenti i modula sistema
+            Overview of core physical modules and component interconnects
           </p>
         </header>
         <div class="presentation-grid">
@@ -1109,7 +339,7 @@
             <figure class="img-wrapper">
               <img
                 src="assets/hardverska-sema.avif"
-                alt="Šema povezivanja Raspberry Pi 5, motora i senzora"
+                alt="System block diagram connecting Raspberry Pi 5, sensors, and motor drivers"
                 class="hardware-img"
                 width="1000"
                 height="576"
@@ -1119,30 +349,31 @@
                 sizes="(max-width: 900px) calc(100vw - 88px), min(640px, 52vw)"
               />
               <figcaption class="caption">
-                Slika 2: Blok šema povezivanja senzora i pogonskih jedinica
+                Figure 2: Schematic block diagram of power regulation, sensor inputs, and motor outputs
               </figcaption>
             </figure>
           </div>
           <div class="specs-card animate-fade-left">
             <article class="spec-item">
-              <strong class="text-primary-high">Napajanje i Regulacija</strong>
+              <strong class="text-primary-high">Power & Regulation</strong>
               <p>
-                XL4015 Step-down konverter (5.1V, 5A) obezbeđuje stabilan rad
-                Raspberry Pi 5 računara pod opterećenjem.
+                An XL4015 Step-down DC-DC buck converter (5.1V, 5A) guarantees stable,
+                uninterrupted voltage delivery to the Raspberry Pi 5 under heavy continuous
+                inference workloads.
               </p>
             </article>
             <article class="spec-item">
-              <strong class="text-primary-high">Pogonski Sistem</strong>
+              <strong class="text-primary-high">Drivetrain & Mobility</strong>
               <p>
-                Četiri DC motora sa Mecanum točkovima omogućavaju omnidirekciono
-                kretanje i precizno pozicioniranje.
+                Four independent DC geared motors paired with Mecanum wheels enable full
+                holonomic (omnidirectional) movement and millimeter-precision positioning.
               </p>
             </article>
             <article class="spec-item">
-              <strong class="text-primary-high">Senzorski Modul</strong>
+              <strong class="text-primary-high">Vision & Sensor Module</strong>
               <p>
-                Raspberry Pi Camera Module V2 (8MP) povezana preko MIPI CSI-2
-                interfejsa za akviziciju video strima visoke rezolucije.
+                A Raspberry Pi Camera Module v2 (8MP) linked via dedicated MIPI CSI-2
+                hardware interface delivers high-framerate, low-latency video streaming.
               </p>
             </article>
           </div>
@@ -1151,9 +382,9 @@
 
       <section id="software-logic" class="section-container">
         <header class="section-header animate-fade-up">
-          <h2 class="section-title">Softverski Arhitektonski Sloj</h2>
+          <h2 class="section-title">Software Architecture Layer</h2>
           <p class="section-subtitle">
-            Komponente zadužene za obradu podataka i upravljanje
+            Decoupled software stack designed for real-time edge processing and autonomous control
           </p>
         </header>
         <div class="modern-grid">
@@ -1161,13 +392,13 @@
             <div class="card-content">
               <div class="card-top">
                 <span class="modern-icon" aria-hidden="true">🧠</span>
-                <span class="tech-pill-high">Detekcija</span>
+                <span class="tech-pill-high">Detection</span>
               </div>
               <h3>YOLO AI Model</h3>
               <p>
-                Inference model prilagođen za obradu 30 FPS video strima,
-                detekciju objekata na putu (5-10 FPS) i njihovo konstantno
-                praćenje.
+                Optimized neural network inference pipeline processing 30 FPS camera feeds,
+                performing real-time roadway object detection (5–10 FPS) and continuous
+                multi-target tracking.
               </p>
             </div>
           </article>
@@ -1176,12 +407,12 @@
             <div class="card-content">
               <div class="card-top">
                 <span class="modern-icon" aria-hidden="true">👁️</span>
-                <span class="tech-pill-high">Optička Obrada</span>
+                <span class="tech-pill-high">Optical Processing</span>
               </div>
-              <h3>Google ML OCR</h3>
+              <h3>Google ML Kit OCR</h3>
               <p>
-                Ekstrakcija teksta sa saobraćajnih znakova i tablica, uz
-                automatsku korekciju rotacije i izvršavanje tekstualnih komandi.
+                On-the-fly optical text extraction from road signs and instructional markers,
+                featuring automatic rotation correction and execution of recognized commands.
               </p>
             </div>
           </article>
@@ -1190,12 +421,12 @@
             <div class="card-content">
               <div class="card-top">
                 <span class="modern-icon" aria-hidden="true">⚡</span>
-                <span class="tech-pill-high">Obrada podataka</span>
+                <span class="tech-pill-high">Concurrency</span>
               </div>
-              <h3>Višenitni Rad</h3>
+              <h3>Multithreaded Pipeline</h3>
               <p>
-                Asinhrona i paralelna obrada ulaznog video strima, AI
-                inferencije i generisanja PWM signala za kontrole motora.
+                Asynchronous, parallel execution separating the camera acquisition thread,
+                AI inference worker, and hardware PWM motor duty cycles to avoid frame drops.
               </p>
             </div>
           </article>
@@ -1204,12 +435,12 @@
             <div class="card-content">
               <div class="card-top">
                 <span class="modern-icon" aria-hidden="true">🐳</span>
-                <span class="tech-pill-high">Kontejnerizacija</span>
+                <span class="tech-pill-high">Containerization</span>
               </div>
-              <h3>Docker Okruženje</h3>
+              <h3>Dockerized Environment</h3>
               <p>
-                Izolovani servisi za server i mrežne skripte eliminišu konflikte
-                u zavisnostima koda i ubrzavaju oporavak od grešaka.
+                Isolated microservices for the server and network watchdog eliminate host
+                OS dependency collisions and provide rapid error recovery.
               </p>
             </div>
           </article>
@@ -1218,12 +449,12 @@
             <div class="card-content">
               <div class="card-top">
                 <span class="modern-icon" aria-hidden="true">🚀</span>
-                <span class="tech-pill-high">Automatizacija</span>
+                <span class="tech-pill-high">Automation</span>
               </div>
               <h3>GitHub Actions CI/CD</h3>
               <p>
-                Automatsko testiranje i build izmena pri svakom commit-u
-                obezbeđuju stabilnost koda tokom kontinuiranog razvoja.
+                Automated linting, unit testing, and container build validation on every push
+                ensure stability throughout continuous software development.
               </p>
             </div>
           </article>
@@ -1232,12 +463,12 @@
             <div class="card-content">
               <div class="card-top">
                 <span class="modern-icon" aria-hidden="true">☁️</span>
-                <span class="tech-pill-high">Distribucija</span>
+                <span class="tech-pill-high">Distribution</span>
               </div>
               <h3>Docker Hub Registry</h3>
               <p>
-                Centralizovani repozitorijum sa spremljenim image-ima omogućava
-                brzu instalaciju sistema na novom Raspberry Pi uređaju.
+                Centralized container registry hosting pre-built multi-architecture images
+                enables one-command deployments on any fresh Raspberry Pi device.
               </p>
             </div>
           </article>
@@ -1246,9 +477,9 @@
 
       <section id="projects" class="section-container animate-fade-up">
         <header class="section-header">
-          <h2 class="section-title">Modularni Ekosistem Repozitorijuma</h2>
+          <h2 class="section-title">Modular Ecosystem Repositories</h2>
           <p class="section-subtitle">
-            Izvorni kod je javno dostupan i podeljen po modulima
+            Source code is open-source and modularized into focused repositories
           </p>
         </header>
         <div class="modern-grid">
@@ -1266,11 +497,11 @@
                 </div>
                 <h3>RPi Server</h3>
                 <p>
-                  Glavni backend servis. Upravlja periferijama, detekcijom
-                  objekata i distribucijom MJPEG video strima.
+                  Primary backend microservice. Manages GPIO peripherals, YOLO object
+                  detection inference, and low-latency MJPEG video streaming.
                 </p>
                 <div class="card-footer-high">
-                  <span>Pregled repozitorijuma →</span>
+                  <span>View Repository →</span>
                 </div>
               </div>
             </article>
@@ -1290,11 +521,11 @@
                 </div>
                 <h3>Smart Network</h3>
                 <p>
-                  Mrežni servis zadužen za stabilnost veze. Automatski podiže
-                  lokalnu Hotspot mrežu u odsustvu eksterne.
+                  Self-healing network daemon. Monitors Wi-Fi connectivity and automatically
+                  activates a fallback local Wi-Fi Hotspot whenever external networks drop.
                 </p>
                 <div class="card-footer-high">
-                  <span>Pregled repozitorijuma →</span>
+                  <span>View Repository →</span>
                 </div>
               </div>
             </article>
@@ -1314,11 +545,11 @@
                 </div>
                 <h3>Model Pipeline</h3>
                 <p>
-                  Skripte za optimizaciju, kvantizaciju i konverziju YOLO modela
-                  za hardverski ubrzan rad.
+                  Optimization, quantization (INT8/FP16), and export workflows transforming
+                  YOLO models for hardware-accelerated edge inference.
                 </p>
                 <div class="card-footer-high">
-                  <span>Pregled repozitorijuma →</span>
+                  <span>View Repository →</span>
                 </div>
               </div>
             </article>
@@ -1336,13 +567,13 @@
                   <span class="modern-icon" aria-hidden="true">📱</span>
                   <span class="tech-pill-high">Kotlin • Compose</span>
                 </div>
-                <h3>Android Klijent</h3>
+                <h3>Android Client</h3>
                 <p>
-                  Aplikacija za kontrolu kretanja u realnom vremenu i prikaz
-                  video strima niske latencije.
+                  Primary operator dashboard. Provides real-time Mecanum drive controls,
+                  low-latency FPV video playback, and live telemetry overlay.
                 </p>
                 <div class="card-footer-high">
-                  <span>Pregled repozitorijuma →</span>
+                  <span>View Repository →</span>
                 </div>
               </div>
             </article>
@@ -1362,11 +593,11 @@
                 </div>
                 <h3>Web Dashboard</h3>
                 <p>
-                  Korisnički interfejs za nadzor rada vozila i analitiku
-                  parametara direktno iz veb pregledača.
+                  Modern web monitoring interface allowing remote vehicle telemetry inspection
+                  and analytics directly within any web browser.
                 </p>
                 <div class="card-footer-high">
-                  <span>Pregled repozitorijuma →</span>
+                  <span>View Repository →</span>
                 </div>
               </div>
             </article>
@@ -1386,11 +617,11 @@
                 </div>
                 <h3>RPi Server (Legacy)</h3>
                 <p>
-                  Inicijalna verzija backenda zasnovana na nativnim Linux
-                  servisima i WebSockets komunikaciji.
+                  Initial prototype backend based on bare-metal Linux systemd daemons and
+                  native WebSockets messaging.
                 </p>
                 <div class="card-footer-high">
-                  <span>Pregled repozitorijuma →</span>
+                  <span>View Repository →</span>
                 </div>
               </div>
             </article>
@@ -1400,9 +631,9 @@
 
       <section id="use-cases" class="section-container">
         <header class="section-header animate-fade-up">
-          <h2 class="section-title">Mogućnosti Primene</h2>
+          <h2 class="section-title">Applications & Use Cases</h2>
           <p class="section-subtitle">
-            Od učenja koncepta do praktičnih scenarija upotrebe
+            From foundational STEM robotics education to real-world automation scenarios
           </p>
         </header>
         <div class="modern-grid">
@@ -1412,12 +643,12 @@
             <div class="card-content">
               <div class="card-top">
                 <span class="modern-icon" aria-hidden="true">🎓</span>
-                <span class="tech-pill-high primary-pill">Primarna Svrha</span>
+                <span class="tech-pill-high primary-pill">Primary Purpose</span>
               </div>
-              <h3>Edukacija i R&D</h3>
+              <h3>Education & STEM R&D</h3>
               <p>
-                Osnova za učenje o radu Edge AI modela, kreiranju Linux servisa
-                i razvoju kontrolnih algoritmima u Python-u.
+                An interactive learning platform for exploring edge computing, microservice
+                architecture, sensor fusion, and asynchronous embedded Python development.
               </p>
             </div>
           </article>
@@ -1426,13 +657,12 @@
             <div class="card-content">
               <div class="card-top">
                 <span class="modern-icon" aria-hidden="true">🏙️</span>
-                <span class="tech-pill-high">Pametni Gradovi</span>
+                <span class="tech-pill-high">Smart Infrastructure</span>
               </div>
-              <h3>Analiza Saobraćaja</h3>
+              <h3>Smart Cities & Traffic Analysis</h3>
               <p>
-                Mogućnost prilagođavanja detekcije za brojanje vozila,
-                prepoznavanje tablica i analizu gustine saobraćaja na određenoj
-                deonici.
+                Adaptable for vehicular flow monitoring, license plate extraction, roadway
+                obstruction alerting, and municipal street condition inspection.
               </p>
             </div>
           </article>
@@ -1441,12 +671,12 @@
             <div class="card-content">
               <div class="card-top">
                 <span class="modern-icon" aria-hidden="true">🏭</span>
-                <span class="tech-pill-high">Industrija 4.0</span>
+                <span class="tech-pill-high">Automation</span>
               </div>
-              <h3>Unutrašnja Logistika (AGV)</h3>
+              <h3>Industry 4.0 & Warehouse AGVs</h3>
               <p>
-                Test-platforma za autonomne transportere koji prate vizuelne
-                oznake i izbegavaju prepreke unutar magacinskih prostora.
+                Testbed for Automated Guided Vehicles (AGVs) navigating warehouse floors
+                through visual line-following, ArUco/QR markers, and dynamic obstacle evasion.
               </p>
             </div>
           </article>
@@ -1455,9 +685,9 @@
 
       <section id="gallery" class="section-container">
         <header class="section-header">
-          <h2 class="section-title">Galerija Projekta</h2>
+          <h2 class="section-title">Project Gallery</h2>
           <p class="section-subtitle">
-            Vizuelni prikaz hardvera, priznanja i kontrolnih interfejsa
+            Visual showcase of physical hardware, competitive accolades, and software interfaces
           </p>
         </header>
         <div class="modern-grid">
@@ -1465,7 +695,7 @@
             <div class="gallery-img-container">
               <img
                 src="assets/nagrada.avif"
-                alt="Priznanje sa Galaksija kupa"
+                alt="Award certificate from the Galaksija Cup"
                 width="400"
                 height="220"
                 decoding="async"
@@ -1474,7 +704,7 @@
               />
             </div>
             <div class="gallery-info">
-              <p>4. Mesto i Specijalna nagrada na 10. Galaksija kupu</p>
+              <p>4th Place & Special Award at the 10th Galaksija Cup</p>
             </div>
           </div>
 
@@ -1482,7 +712,7 @@
             <div class="gallery-img-container">
               <img
                 src="assets/vozilo.avif"
-                alt="Pametno Vozilo - Eksterijer"
+                alt="Smart Vehicle physical chassis assembly"
                 width="400"
                 height="220"
                 decoding="async"
@@ -1491,7 +721,7 @@
               />
             </div>
             <div class="gallery-info">
-              <p>Fizička konstrukcija vozila sa mehanikom i senzorima</p>
+              <p>Physical chassis assembly featuring Mecanum drivetrain and sensor array</p>
             </div>
           </div>
 
@@ -1499,7 +729,7 @@
             <div class="gallery-img-container">
               <img
                 src="assets/ocr.avif"
-                alt="Android Aplikacija OCR"
+                alt="Android application user interface showing OCR text recognition"
                 width="400"
                 height="220"
                 decoding="async"
@@ -1508,7 +738,7 @@
               />
             </div>
             <div class="gallery-info">
-              <p>Korisnički interfejs mobilne klijentske aplikacije</p>
+              <p>Mobile client interface showing live OCR text extraction</p>
             </div>
           </div>
 
@@ -1516,7 +746,7 @@
             <div class="gallery-img-container">
               <img
                 src="assets/yolo.avif"
-                alt="YOLO Detekcija"
+                alt="Real-time YOLO object detection display"
                 width="400"
                 height="220"
                 decoding="async"
@@ -1525,7 +755,7 @@
               />
             </div>
             <div class="gallery-info">
-              <p>Prikaz rezultata obrade i detekcije u realnom vremenu</p>
+              <p>Real-time YOLO object detection and bounding box telemetry stream</p>
             </div>
           </div>
 
@@ -1533,7 +763,7 @@
             <div class="gallery-img-container">
               <img
                 src="assets/docker log text.avif"
-                alt="Docker Log Prikaz"
+                alt="Docker system logs on Raspberry Pi 5"
                 width="400"
                 height="220"
                 decoding="async"
@@ -1542,7 +772,7 @@
               />
             </div>
             <div class="gallery-info">
-              <p>Prikaz sistemskih zapisa unutar Docker kontejnera na RPi5</p>
+              <p>Containerized system logs running on Raspberry Pi 5 under Docker</p>
             </div>
           </div>
 
@@ -1550,7 +780,7 @@
             <div class="gallery-img-container">
               <img
                 src="assets/htop.avif"
-                alt="Performanse Sistema"
+                alt="System resource monitor showing CPU and memory utilization"
                 width="400"
                 height="220"
                 decoding="async"
@@ -1559,7 +789,7 @@
               />
             </div>
             <div class="gallery-info">
-              <p>Praćenje opterećenja procesora i memorijskih resursa</p>
+              <p>Live resource monitor (htop) tracking CPU cores and memory footprint</p>
             </div>
           </div>
         </div>
@@ -1567,9 +797,9 @@
 
       <section id="roadmap" class="section-container">
         <header class="section-header">
-          <h2 class="section-title">Faze Razvoja Projekta</h2>
+          <h2 class="section-title">Project Development Roadmap</h2>
           <p class="section-subtitle">
-            Pregled dosadašnjih verzija i planiranih unapređenja
+            Chronological evolution from initial prototype to future autonomous milestones
           </p>
         </header>
 
@@ -1577,28 +807,24 @@
           <div class="roadmap-item completed">
             <div class="roadmap-dot"></div>
             <div class="roadmap-card">
-              <div class="phase-tag">Verzija 1.0</div>
-              <h3>Faza I: Prototip i Osnovna Kontrola</h3>
-              <p>Osnovna verifikacija koncepta i hardvera:</p>
+              <div class="phase-tag">Version 1.0</div>
+              <h3>Phase I: Prototype & Basic Control</h3>
+              <p>Fundamental verification of hardware and mechanics:</p>
               <ul>
                 <li>
-                  <strong>Hardver:</strong> Sastavljanje šasije i osnovna
-                  kontrola kretanja.
+                  <strong>Hardware:</strong> Chassis assembly and baseline 4WD differential drive.
                 </li>
                 <li>
-                  <strong>Komunikacija:</strong> Daljinsko upravljanje preko
-                  fiksnog mrežnog Hotspot-a.
+                  <strong>Communication:</strong> Manual teleoperation via static Wi-Fi hotspot.
                 </li>
                 <li>
-                  <strong>Video Strim:</strong> Osnovna FPV integracija kamere.
+                  <strong>Video Stream:</strong> Direct FPV camera capture pipeline.
                 </li>
                 <li>
-                  <strong>Softver:</strong> Prva verzija klijentske aplikacije i
-                  sinhronih Python skripti.
+                  <strong>Software:</strong> Early client prototype and synchronous Python scripts.
                 </li>
                 <li>
-                  <strong>AI Model:</strong> Testiranje rada sa YOLOv8
-                  arhitekturom.
+                  <strong>AI Model:</strong> Initial feasibility benchmarking with YOLOv8.
                 </li>
               </ul>
             </div>
@@ -1607,36 +833,29 @@
           <div class="roadmap-item active">
             <div class="roadmap-dot"></div>
             <div class="roadmap-card">
-              <div class="phase-tag">Verzija 2.0</div>
-              <h3>Faza II: Modularna Arhitektura i Priznanja</h3>
+              <div class="phase-tag">Version 2.0</div>
+              <h3>Phase II: Modular Architecture & Recognition</h3>
               <p>
-                Stabilizacija sistema, prelazak na izolovano okruženje i
-                takmičarski uspeh:
+                System stabilization, containerization, and competitive recognition:
               </p>
               <ul>
                 <li>
-                  <strong>Uspeh na Takmičenju:</strong> Osvojeno 4. mesto i
-                  Specijalna nagrada na 10. Galaksija kupu.
+                  <strong>Competitive Success:</strong> Won 4th place and Special Award at the 10th Galaksija Cup.
                 </li>
                 <li>
-                  <strong>Refaktoring:</strong> Nova arhitektura zasnovana na
-                  Docker kontejnerima.
+                  <strong>Refactoring:</strong> Microservices architecture powered by Docker Compose.
                 </li>
                 <li>
-                  <strong>AI Vizija:</strong> Implementacija i optimizacija YOLO
-                  i OCR modela.
+                  <strong>AI Vision:</strong> Multi-model pipeline featuring YOLO and Google ML Kit OCR.
                 </li>
                 <li>
-                  <strong>Mrežna Stabilnost:</strong> Samostalni mrežni servis
-                  za automatsko povezivanje.
+                  <strong>Network Reliability:</strong> Self-healing daemon with automatic fallback hotspot.
                 </li>
                 <li>
-                  <strong>Aplikacija:</strong> Stabilan Android UI za
-                  upravljanje i pregled analitike.
+                  <strong>Client App:</strong> Modern Jetpack Compose Android UI with low-latency streaming.
                 </li>
                 <li>
-                  <strong>Open Source:</strong> Kod publiciran na GitHub-u pod
-                  MIT licencom.
+                  <strong>Open Source:</strong> Publicly released on GitHub under the permissive MIT license.
                 </li>
               </ul>
             </div>
@@ -1645,21 +864,18 @@
           <div class="roadmap-item future">
             <div class="roadmap-dot"></div>
             <div class="roadmap-card">
-              <div class="phase-tag">Verzija 3.0</div>
-              <h3>Faza III: Napredna Autonomija</h3>
-              <p>Širenje funkcionalnosti i autonomnog rada:</p>
+              <div class="phase-tag">Version 3.0</div>
+              <h3>Phase III: Advanced Autonomy</h3>
+              <p>Expanding autonomous capabilities and curriculum adoption:</p>
               <ul>
                 <li>
-                  <strong>Programabilnost:</strong> Integracija grafičkog API-ja
-                  za učenje osnova programiranja.
+                  <strong>Educational SDK:</strong> Block-based visual programming API for beginner STEM students.
                 </li>
                 <li>
-                  <strong>Senzori:</strong> Dodavanje LiDAR senzora i primena
-                  SLAM algoritmima za mapiranje.
+                  <strong>Sensor Fusion:</strong> Integration of 2D/3D LiDAR with SLAM mapping algorithms.
                 </li>
                 <li>
-                  <strong>Standardizacija:</strong> Optimizacija dokumentacije
-                  za jednostavnu replikaciju projekta.
+                  <strong>Standardization:</strong> Comprehensive replication blueprints and open hardware schematics.
                 </li>
               </ul>
             </div>
@@ -1667,11 +883,11 @@
         </div>
       </section>
 
-      <section id="parodija" class="section-container animate-fade-up">
+      <section id="comparison" class="section-container animate-fade-up">
         <header class="section-header">
-          <h2 class="section-title">Poređenje: Teorija vs. Praksa</h2>
+          <h2 class="section-title">Comparison: Theory vs. Practice</h2>
           <p class="section-subtitle">
-            Analiza razlika između klasičnog učenja i rada na realnim sistemima
+            Analyzing the contrast between traditional classroom learning and production-grade engineering
           </p>
         </header>
 
@@ -1680,13 +896,12 @@
             <div class="card-content">
               <div class="card-top">
                 <span class="modern-icon" aria-hidden="true">📄</span>
-                <span class="tech-pill-high">Klasičan Pristup</span>
+                <span class="tech-pill-high">Traditional Approach</span>
               </div>
-              <h3>Suva Teorija</h3>
+              <h3>Dry Theory</h3>
               <p>
-                Fokus na pisanju sintakse na papiru bez mogućnosti izvršavanja
-                koda, uočavanja grešaka u realnom vremenu ili rada sa
-                hardverskim ograničenjima.
+                Focus on memorizing syntax on paper without the ability to execute code,
+                diagnose runtime exceptions, or navigate physical hardware limitations.
               </p>
             </div>
           </article>
@@ -1695,12 +910,12 @@
             <div class="card-content">
               <div class="card-top">
                 <span class="modern-icon" aria-hidden="true">⚠️</span>
-                <span class="tech-pill-high">Ograničenja</span>
+                <span class="tech-pill-high">Limitations</span>
               </div>
-              <h3>Nedostatak Okruženja</h3>
+              <h3>Disconnected Sandbox</h3>
               <p>
-                Rešavanje zadataka bez dodira sa mrežnim protokolima, kašnjenjem
-                signala, upravljanjem memorijom i optimizacijom resursa.
+                Solving artificial textbook problems isolated from network latency,
+                packet drops, CPU thermal throttling, and hardware memory ceilings.
               </p>
             </div>
           </article>
@@ -1709,12 +924,12 @@
             <div class="card-content">
               <div class="card-top">
                 <span class="modern-icon" aria-hidden="true">⚙️</span>
-                <span class="tech-pill-high">Praktičan Rad</span>
+                <span class="tech-pill-high">Hands-On Engineering</span>
               </div>
-              <h3>Rad na Realnom Sistemu</h3>
+              <h3>Production-Grade Systems</h3>
               <p>
-                Razvoj kroz neposredno rešavanje problema, kontejnerizaciju
-                aplikacija, rad sa Edge AI modelima i samostalno istraživanje.
+                Accelerated engineering growth achieved through live problem solving,
+                Docker microservices, on-device Edge AI models, and open-source collaboration.
               </p>
             </div>
           </article>
@@ -1726,14 +941,14 @@
       <div class="footer-grid">
         <div class="footer-left animate-fade-up">
           <div class="logo-text">
-            <span class="logo-main">PAMETNO</span>
-            <span class="logo-sub">VOZILO</span>
+            <span class="logo-main">SMART</span>
+            <span class="logo-sub">VEHICLE</span>
           </div>
           <div class="footer-credits">
-            <p>Autor: <strong>Danilo Stoletović</strong></p>
+            <p>Author: <strong>Danilo Stoletović</strong></p>
             <p>Mentor: <strong>Predrag Šubarević</strong></p>
             <p class="special-thanks">
-              Zahvalnost bivšem mentoru: <strong>Dejanu Batanjcu</strong>
+              Special thanks to former mentor: <strong>Dejan Batanjac</strong>
             </p>
             <p class="school-info">ETŠ „Nikola Tesla“ Niš • 2026</p>
           </div>
@@ -1744,7 +959,7 @@
             <div class="qr-container">
               <img
                 src="assets/qr-sajt.avif"
-                alt="QR Kod za pristup sajtu"
+                alt="QR Code to access the digital website"
                 class="qr-img"
                 width="140"
                 height="140"
@@ -1754,7 +969,7 @@
               />
             </div>
             <div class="qr-text">
-              <span class="qr-label">Digitalna verzija</span>
+              <span class="qr-label">Digital Version</span>
             </div>
           </div>
         </div>

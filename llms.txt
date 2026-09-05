@@ -1,27 +1,28 @@
-# Pametno Vozilo / Smart Vehicle — Autonomous Edge AI Platform
+# Smart Vehicle (Pametno Vozilo) — Autonomous Edge AI Platform
 
-> Open-source edukativni sistem za Edge AI i računarsku viziju na Raspberry Pi 5. / An open-source educational system for Edge AI and computer vision on Raspberry Pi 5.
+> An open-source educational and research platform for Edge AI computer vision and autonomous robotics powered by Raspberry Pi 5. Awarded 4th Place & Special Award at the 10th Galaksija Cup National STEM Championship.
 
-## Serbian / Srpski
+## Key Resources
 
-- **Opis:** Sistem za razvoj i istraživanje aplikacija računarske vizije na samom uređaju (Edge AI) koristeći Raspberry Pi 5.
-- [Zvanični Veb Sajt](https://yoloprojekat.github.io/): Pregled hardverske arhitekture, softverskih slojeva i priznanja.
-- [GitHub Organizacija](https://github.com/yoloprojekat): Pristup celokupnom izvornom kodu projekta.
-- [RPi Backend Server](https://github.com/yoloprojekat/rpi-server): Backend napisan u Python-u i kontejnerizovan kroz Docker.
-- [Android Aplikacija](https://github.com/yoloprojekat/android-client): Klijentska aplikacija za daljinsku kontrolu i video stream.
-- [Smart Network](https://github.com/yoloprojekat/smart-network): Skripte za pouzdanu mrežnu komunikaciju i rezervni Hotspot.
+- **Official Website:** [https://yoloprojekat.com/](https://yoloprojekat.com/)
+- **GitHub Organization:** [https://github.com/yoloprojekat](https://github.com/yoloprojekat)
+- **Central Landing Page Repository:** [https://github.com/yoloprojekat/landing-page](https://github.com/yoloprojekat/landing-page)
 
-## English / Key Resources
+## Ecosystem Repositories
 
-- **Description:** An open-source educational system for developing and researching computer vision applications directly on the edge device (Edge AI) using Raspberry Pi 5.
-- [Official Website](https://yoloprojekat.github.io/): Overview of hardware architecture, software layers, and awards.
-- [GitHub Organization](https://github.com/yoloprojekat): Access to the full source code of the project.
-- [RPi Backend Server](https://github.com/yoloprojekat/rpi-server): Backend written in Python and containerized with Docker.
-- [Android Application](https://github.com/yoloprojekat/android-client): Client application for remote control and video streaming.
-- [Smart Network](https://github.com/yoloprojekat/smart-network): Scripts for reliable network communication and backup Hotspot.
+### Core & Infrastructure
+- **RPi Server:** [https://github.com/yoloprojekat/rpi-server](https://github.com/yoloprojekat/rpi-server) — Containerized Python backend managing GPIO motor drivers, YOLO real-time object detection inference, and MJPEG video streaming.
+- **Smart Network:** [https://github.com/yoloprojekat/smart-network](https://github.com/yoloprojekat/smart-network) — Self-healing network daemon providing automatic fallback Wi-Fi Hotspot configuration for continuous operational connectivity.
+- **Model Pipeline:** [https://github.com/yoloprojekat/model-pipeline](https://github.com/yoloprojekat/model-pipeline) — Optimization, quantization (INT8/FP16), and export workflows converting YOLO models for hardware-accelerated edge inference on TFLite and ONNX.
 
-## Technical Details / Tehnički detalji
+### Client Platform
+- **Android Client:** [https://github.com/yoloprojekat/android-client](https://github.com/yoloprojekat/android-client) — Native Android teleoperation dashboard built with Jetpack Compose (Kotlin), featuring Google ML Kit OCR text detection and low-latency FPV video streaming.
 
-- **Primary Languages / Jezici:** Python, Kotlin, Bash, HTML/CSS/JS
-- **Technologies / Tehnologije:** Docker, YOLO, Google ML Kit OCR, Raspberry Pi 5, Mecanum drive
-- **License / Licenca:** MIT
+## Technical Specifications
+
+- **Target Platforms:** Raspberry Pi 5 (Edge Hardware), Android 15+ (Client Teleoperation)
+- **Primary Languages:** Python 3.11, Kotlin, Bash, HTML5, Vanilla CSS, Vanilla JavaScript
+- **Core Technologies:** Docker & Docker Compose, YOLO, Google ML Kit OCR, ONNX Runtime, TensorFlow Lite, OpenCV
+- **Hardware Architecture:** Raspberry Pi 5 (8GB RAM), Mecanum omnidirectional 4WD drivetrain, L298N H-Bridge dual motor drivers, Raspberry Pi Camera Module v2 (8MP, MIPI CSI-2), XL4015 5A DC-DC Step-Down Buck Converter
+- **License:** MIT License
+- **Author:** Danilo Stoletović (Mentor: Predrag Šubarević, Former Mentor: Dejan Batanjac, ETŠ „Nikola Tesla“ Niš • 2026)

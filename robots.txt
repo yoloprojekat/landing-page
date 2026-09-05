@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# LLM and AI Agent Knowledge Spec
+# https://yoloprojekat.com/llms.txt
+
 Sitemap: https://yoloprojekat.com/sitemap.xml
