@@ -11,7 +11,11 @@
 [![Vision](https://img.shields.io/badge/Vision-YOLO%20%7C%20ML%20Kit-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://github.com/yoloprojekat/model-pipeline)
 [![License: MIT](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)](LICENSE)
 
-<br>
+<br><br>
+
+<img src="assets/website.png" alt="Smart Vehicle Official Website Preview" width="100%">
+
+<br><br>
 
 <p align="center">
   <b>Smart Vehicle (Pametno Vozilo)</b> is a modular, high-performance Edge AI robotics platform powered by the Raspberry Pi 5.
@@ -89,6 +93,16 @@ The project codebase is partitioned into specialized repositories for optimal ed
 | **Edge Backend** | Python 3.11, Docker & Docker Compose, FastAPI, Asyncio, UDP/TCP Sockets |
 | **Client Platform** | Native **Android Platform** (Android 15+ SDK, Kotlin, Jetpack Compose, Coroutines) |
 | **Web Presentation** | Semantic HTML5, Vanilla CSS, Vanilla JavaScript (Zero Dependencies) |
+
+---
+
+## ⚡ Core Web Vitals & Performance
+
+The web presentation layer is built from the ground up for maximum speed, zero runtime overhead, and optimal SEO, scoring a perfect **100/100/100/100** across all Google PageSpeed Insights & Lighthouse audits:
+
+| 📱 Mobile Web Vitals (100 / 100 / 100 / 100) | 🖥️ Desktop Web Vitals (100 / 100 / 100 / 100) |
+| :---: | :---: |
+| <img src="assets/and.png" alt="Mobile Web Vitals Audit - PageSpeed Insights" width="100%"> | <img src="assets/desk.png" alt="Desktop Web Vitals Audit - PageSpeed Insights" width="100%"> |
 
 ---
 
