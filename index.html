@@ -40,10 +40,18 @@
     <link rel="canonical" href="https://yoloprojekat.com/" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
 
-    <!-- Local Font Preload -->
+    <!-- Local Font Preloads -->
     <link
       rel="preload"
       href="assets/fonts/plus-jakarta-sans-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/plus-jakarta-sans-latin-ext.woff2"
       as="font"
       type="font/woff2"
       crossorigin
@@ -940,13 +948,21 @@
     </main>
 
     <footer class="footer section-container">
-      <div class="footer-grid">
-        <div class="footer-left animate-fade-up">
-          <div class="logo-text">
-            <span class="logo-main">SMART</span>
-            <span class="logo-sub">VEHICLE</span>
+      <div class="footer-card animate-fade-up">
+        <div class="footer-grid">
+          <div class="footer-col footer-brand">
+            <div class="logo-text">
+              <span class="logo-main">SMART</span>
+              <span class="logo-sub">VEHICLE</span>
+            </div>
+            <p class="footer-desc">
+              Open-source autonomous Edge AI robotics platform powered by Raspberry Pi 5 and computer vision.
+            </p>
+            <p class="school-info">ETŠ „Nikola Tesla“ Niš • 2026</p>
           </div>
-          <div class="footer-credits">
+
+          <div class="footer-col footer-credits">
+            <h3 class="footer-col-title">Project Leadership</h3>
             <p>
               Author:
               <a
@@ -972,39 +988,63 @@
             <p class="special-thanks">
               Special thanks to former mentor: <strong>Dejan Batanjac</strong>
             </p>
-            <p class="school-info">ETŠ „Nikola Tesla“ Niš • 2026</p>
-            <nav class="footer-meta-links" aria-label="Machine-readable specifications and site resources">
-              <a href="/.well-known/security.txt" class="footer-sublink">Security</a>
-              <span class="meta-dot" aria-hidden="true">•</span>
-              <a href="/robots.txt" class="footer-sublink">Robots</a>
-              <span class="meta-dot" aria-hidden="true">•</span>
-              <a href="/sitemap.xml" class="footer-sublink">Sitemap</a>
-              <span class="meta-dot" aria-hidden="true">•</span>
-              <a href="/llms.txt" class="footer-sublink">llms.txt</a>
-              <span class="meta-dot" aria-hidden="true">•</span>
-              <a href="/agents.txt" class="footer-sublink">agents.txt</a>
-            </nav>
+          </div>
+
+          <div class="footer-col footer-resources">
+            <h3 class="footer-col-title">Ecosystem & Links</h3>
+            <ul class="footer-resource-list">
+              <li>
+                <a
+                  href="https://github.com/yoloprojekat/landing-page"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="footer-resource-link"
+                >
+                  <span>GitHub Repository</span>
+                  <span class="external-icon" aria-hidden="true">↗</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/yoloprojekat"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="footer-resource-link"
+                >
+                  <span>GitHub Organization</span>
+                  <span class="external-icon" aria-hidden="true">↗</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://danilostoletovic.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="footer-resource-link"
+                >
+                  <span>Author Portfolio</span>
+                  <span class="external-icon" aria-hidden="true">↗</span>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div class="footer-right animate-fade-up delay-1">
-          <div class="qr-wrapper">
-            <div class="qr-container">
-              <img
-                src="assets/qr-sajt.avif"
-                alt="QR Code to access the digital website"
-                class="qr-img"
-                width="140"
-                height="140"
-                decoding="async"
-                loading="lazy"
-                fetchpriority="low"
-              />
-            </div>
-            <div class="qr-text">
-              <span class="qr-label">Digital Version</span>
-            </div>
-          </div>
+        <div class="footer-bottom">
+          <p class="footer-copy">
+            &copy; 2026 Danilo Stoletović &bull; MIT License
+          </p>
+          <nav class="footer-meta-links" aria-label="Machine-readable specifications and site resources">
+            <a href="/.well-known/security.txt" class="footer-sublink">Security</a>
+            <span class="meta-dot" aria-hidden="true">•</span>
+            <a href="/robots.txt" class="footer-sublink">Robots</a>
+            <span class="meta-dot" aria-hidden="true">•</span>
+            <a href="/sitemap.xml" class="footer-sublink">Sitemap</a>
+            <span class="meta-dot" aria-hidden="true">•</span>
+            <a href="/llms.txt" class="footer-sublink">llms.txt</a>
+            <span class="meta-dot" aria-hidden="true">•</span>
+            <a href="/agents.txt" class="footer-sublink">agents.txt</a>
+          </nav>
         </div>
       </div>
     </footer>

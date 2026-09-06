@@ -1,0 +1,48 @@
+# Cloudflare Pages Custom HTTP Response Headers
+# https://developers.cloudflare.com/pages/configuration/headers/
+
+# Web Fonts - Allow cross-origin font fetching (CORS) and long-term caching
+/assets/fonts/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+  Access-Control-Allow-Headers: *
+  Content-Type: font/woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.woff2
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+  Access-Control-Allow-Headers: *
+  Content-Type: font/woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache CSS & JavaScript bundles
+/*.css
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=31536000, must-revalidate
+
+/*.js
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=31536000, must-revalidate
+
+# Cache images & media
+/assets/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=31536000, must-revalidate
+
+# Machine-readable specifications & text manifests
+/*.txt
+  Access-Control-Allow-Origin: *
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/.well-known/*
+  Access-Control-Allow-Origin: *
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=86400, must-revalidate
+
+# Global security headers for all responses
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
