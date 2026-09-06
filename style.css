@@ -71,12 +71,6 @@ html {
   box-sizing: border-box;
 }
 
-a,
-a:visited {
-  color: inherit;
-  text-decoration: none;
-}
-
 body {
   margin: 0;
   background-color: var(--bg);
@@ -137,8 +131,7 @@ section {
 .image-container,
 .modern-card,
 .gallery-card,
-.roadmap-card,
-.footer-card {
+.roadmap-card {
   background: var(--card-bg-glass);
   border: 1px solid var(--border);
   border-radius: 24px;
@@ -735,70 +728,38 @@ section {
 
 /* Footer Section */
 .footer {
-  margin-top: 100px;
-  padding-bottom: 50px;
-}
-
-.footer a,
-.footer a:visited {
-  color: inherit;
-  text-decoration: none;
-}
-
-.footer-card {
-  padding: 48px 48px 32px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  margin-top: 80px;
+  padding-bottom: 40px;
 }
 
 .footer-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1.2fr 1fr;
-  gap: 48px;
-  align-items: start;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
 }
 
-.footer-col-title {
-  margin: 0 0 16px 0;
-  font-size: 0.85rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--text-dim-high);
-}
-
-.footer-brand .logo-text {
-  margin-bottom: 14px;
-}
-
-.footer-desc {
-  color: var(--text-dim);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin: 0 0 16px 0;
-  max-width: 360px;
+.footer-left .logo-text {
+  margin-bottom: 15px;
 }
 
 .footer-credits p {
-  margin: 0 0 8px 0;
+  margin-bottom: 6px;
   font-size: 0.95rem;
   color: var(--text-main);
-  line-height: 1.5;
 }
 
-.footer-author-link,
-.footer-author-link:visited {
+.footer-author-link {
   color: var(--text-main);
   text-decoration: none;
-  transition: color 0.2s ease, opacity 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .footer-author-link:hover,
 .footer-author-link:focus-visible {
-  color: var(--text-main);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  opacity: 0.8;
+  color: var(--primary);
 }
 
 .author-website-line {
@@ -808,38 +769,32 @@ section {
   flex-wrap: wrap;
 }
 
-.footer-website-link,
-.footer-website-link:visited {
+.footer-website-link {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  color: var(--text-dim-high);
+  color: var(--primary);
   font-weight: 700;
   text-decoration: none;
   transition:
     color 0.2s ease,
-    transform 0.2s ease,
-    opacity 0.2s ease;
+    transform 0.2s ease;
 }
 
 .footer-website-link:hover,
 .footer-website-link:focus-visible {
-  color: var(--text-main);
+  color: var(--primary-high);
   text-decoration: underline;
   text-underline-offset: 3px;
   transform: translateX(2px);
 }
 
-.footer-website-link .external-icon,
-.footer-resource-link .external-icon {
+.footer-website-link .external-icon {
   font-size: 0.85em;
-  opacity: 0.7;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
-.footer-website-link:hover .external-icon,
-.footer-resource-link:hover .external-icon {
-  opacity: 1;
+.footer-website-link:hover .external-icon {
   transform: translate(2px, -2px);
 }
 
@@ -847,63 +802,20 @@ section {
   font-size: 0.85rem;
   color: var(--text-dim);
   margin-top: 10px;
-  border-left: 2px solid var(--border);
+  border-left: 2px solid var(--primary);
   padding-left: 10px;
 }
 
 .school-info {
-  margin: 14px 0 0 0;
+  margin-top: 15px;
   font-weight: 600;
-  font-size: 0.88rem;
-  color: var(--text-dim);
-}
-
-.footer-resource-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.footer-resource-link,
-.footer-resource-link:visited {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  color: var(--text-dim-high);
-  font-size: 0.95rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: color 0.2s ease, opacity 0.2s ease;
-}
-
-.footer-resource-link:hover,
-.footer-resource-link:focus-visible {
-  color: var(--text-main);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.footer-bottom {
-  margin-top: 36px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.footer-copy {
-  margin: 0;
-  font-size: 0.85rem;
-  color: var(--text-dim);
+  color: var(--primary);
 }
 
 .footer-meta-links {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -911,17 +823,16 @@ section {
   font-size: 0.82rem;
 }
 
-.footer-sublink,
-.footer-sublink:visited {
+.footer-sublink {
   color: var(--text-dim);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s ease, opacity 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .footer-sublink:hover,
 .footer-sublink:focus-visible {
-  color: var(--text-main);
+  color: var(--primary);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -1034,19 +945,6 @@ section {
   .section-container {
     margin: 80px auto;
   }
-
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 36px;
-  }
-
-  .footer-brand {
-    grid-column: 1 / -1;
-  }
-
-  .footer-desc {
-    max-width: 100%;
-  }
 }
 
 @media (max-width: 768px) {
@@ -1065,58 +963,37 @@ section {
     left: 12px !important;
   }
 
-  .footer-card {
-    padding: 36px 24px 24px;
-    border-radius: 20px;
-  }
-
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    flex-direction: column;
     text-align: center;
+    align-items: center;
+    gap: 50px;
   }
 
-  .footer-brand {
-    grid-column: auto;
+  .footer-left,
+  .footer-credits {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .footer-credits,
-  .footer-resources {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
   }
 
   .author-website-line {
     justify-content: center;
   }
 
-  .footer-resource-list {
-    align-items: center;
+  .footer-meta-links {
+    justify-content: center;
   }
 
   .special-thanks {
     border-left: none;
-    border-top: 2px solid var(--border);
+    border-top: 2px solid var(--primary);
     padding-left: 0;
-    padding-top: 12px;
-    margin-top: 12px;
+    padding-top: 15px;
+    margin-top: 15px;
     display: inline-block;
     max-width: 280px;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 16px;
-  }
-
-  .footer-meta-links {
-    justify-content: center;
   }
 }
 
