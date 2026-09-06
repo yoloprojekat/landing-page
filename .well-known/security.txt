@@ -1,0 +1,11 @@
+# Yoloprojekat Security Vulnerability Disclosure Policy
+# RFC 9116: A File Format to Aid in Security Vulnerability Disclosure
+# Standardized as recommended by Cloudflare & RFC 9116
+
+Contact: mailto:danilo.stoletovic@outlook.com
+Contact: https://danilostoletovic.com
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en, sr
+Canonical: https://yoloprojekat.com/.well-known/security.txt
+Policy: https://github.com/yoloprojekat/landing-page/security
+Acknowledgments: https://github.com/yoloprojekat/landing-page/graphs/contributors

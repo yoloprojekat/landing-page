@@ -141,7 +141,7 @@ The web presentation layer is built from the ground up for maximum speed, zero r
 
 <div align="center">
 
-**Author:** Danilo Stoletović  
+**Author:** Danilo Stoletović ([danilostoletovic.com](https://danilostoletovic.com))  
 **Mentor:** Predrag Šubarević • **Former Mentor:** Dejan Batanjac  
 **ETŠ „Nikola Tesla“ Niš • 2026**
 

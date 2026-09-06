@@ -5,8 +5,11 @@
 ## Key Resources
 
 - **Official Website:** [https://yoloprojekat.com/](https://yoloprojekat.com/)
+- **Author Website:** [https://danilostoletovic.com/](https://danilostoletovic.com/)
 - **GitHub Organization:** [https://github.com/yoloprojekat](https://github.com/yoloprojekat)
 - **Central Landing Page Repository:** [https://github.com/yoloprojekat/landing-page](https://github.com/yoloprojekat/landing-page)
+- **AI Agent Manifest:** [https://yoloprojekat.com/agents.txt](https://yoloprojekat.com/agents.txt)
+- **Security Policy (RFC 9116 / Cloudflare):** [https://yoloprojekat.com/.well-known/security.txt](https://yoloprojekat.com/.well-known/security.txt)
 
 ## Ecosystem Repositories
 
@@ -15,14 +18,15 @@
 - **Smart Network:** [https://github.com/yoloprojekat/smart-network](https://github.com/yoloprojekat/smart-network) — Self-healing network daemon providing automatic fallback Wi-Fi Hotspot configuration for continuous operational connectivity.
 - **Model Pipeline:** [https://github.com/yoloprojekat/model-pipeline](https://github.com/yoloprojekat/model-pipeline) — Optimization, quantization (INT8/FP16), and export workflows converting YOLO models for hardware-accelerated edge inference on TFLite and ONNX.
 
-### Client Platform
+### Client & Monitoring Platforms
 - **Android Client:** [https://github.com/yoloprojekat/android-client](https://github.com/yoloprojekat/android-client) — Native Android teleoperation dashboard built with Jetpack Compose (Kotlin), featuring Google ML Kit OCR text detection and low-latency FPV video streaming.
+- **Web Dashboard:** [https://github.com/yoloprojekat/web-dashboard](https://github.com/yoloprojekat/web-dashboard) — Modern web interface allowing vehicle telemetry inspection and analytics directly in the browser.
 
 ## Technical Specifications
 
-- **Target Platforms:** Raspberry Pi 5 (Edge Hardware), Android 15+ (Client Teleoperation)
+- **Target Platforms:** Raspberry Pi 5 (Edge Hardware), Android 15+ (Client Teleoperation), Modern Web Browsers
 - **Primary Languages:** Python 3.11, Kotlin, Bash, HTML5, Vanilla CSS, Vanilla JavaScript
 - **Core Technologies:** Docker & Docker Compose, YOLO, Google ML Kit OCR, ONNX Runtime, TensorFlow Lite, OpenCV
 - **Hardware Architecture:** Raspberry Pi 5 (8GB RAM), Mecanum omnidirectional 4WD drivetrain, L298N H-Bridge dual motor drivers, Raspberry Pi Camera Module v2 (8MP, MIPI CSI-2), XL4015 5A DC-DC Step-Down Buck Converter
 - **License:** MIT License
-- **Author:** Danilo Stoletović (Mentor: Predrag Šubarević, Former Mentor: Dejan Batanjac, ETŠ „Nikola Tesla“ Niš • 2026)
+- **Author:** Danilo Stoletović — [danilostoletovic.com](https://danilostoletovic.com/) (Mentor: Predrag Šubarević, Former Mentor: Dejan Batanjac, ETŠ „Nikola Tesla“ Niš • 2026)
